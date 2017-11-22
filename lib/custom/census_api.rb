@@ -53,7 +53,6 @@ class CensusApi
       end
     end
 
-
   end
 
   private
@@ -71,19 +70,27 @@ class CensusApi
   end
 
   def stubbed_response(document_type, document_number, date_of_birth)
-    if document_number == '12345678Z' && date_of_birth == '01/01/1970'.to_date
-      stubbed_valid_response
+    if document_number == '12345678Z'
+      if date_of_birth == '01/01/1970'.to_date
+        stubbed_valid_response
+      else
+        stubbed_invalid_birth_date_response
+      end
     else
       stubbed_invalid_response
     end
   end
 
   def stubbed_valid_response
-    'OK'
+    "<respuesta>\n<estado>OK</estado>\n<cp>35000</cp>\n<distrito>1</distrito>\n</respuesta>"
+  end
+
+  def stubbed_invalid_birth_date_response
+    "<respuesta>\n<estado>OK FECHA NO COINCIDE</estado>\n<cp>35000</cp>\n<distrito>1</distrito>\n</respuesta>"
   end
 
   def stubbed_invalid_response
-    'NO OK'
+    "<respuesta>\n<estado>NO OK ERROR EN CENSO</estado>"
   end
 
 end
