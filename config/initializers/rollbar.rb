@@ -7,7 +7,7 @@ Rollbar.configure do |config|
 
   # Here we'll disable all environments except 'production':
   if Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
-    config.enabled = true
+    config.enabled = false
   else
     config.enabled = false
   end
