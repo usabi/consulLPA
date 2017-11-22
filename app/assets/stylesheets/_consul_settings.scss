@@ -16,8 +16,9 @@ $small-font-size:     rem-calc(14);
 $line-height:         rem-calc(24);
 $tiny-font-size:      rem-calc(12);
 
-$brand:             #004a83;
-$dark:              darken($brand, 10%);
+$brand:             #00247e;
+// $dark:              darken($brand, 10%);
+$dark:              #01287f;
 
 $text:              #222;
 $text-medium:       #515151;
@@ -42,12 +43,13 @@ $proposals-dark:    #794500;
 $budget:            #7e328a;
 $budget-hover:      #7571bf;
 
-$highlight:         #e7f2fc;
+$highlight:         #F6C257;
 $highlight-soft:    #f3f8fd;
 $light:             #f5f7fa;
 $featured:          #ffdc5c;
 
-$footer-border:     #bfc1c3;
+$footer-border:     transparent;
+$footer-color:      white;
 
 $success-bg:        #dff0d8;
 $success-border:    #d6e9c6;
@@ -75,5 +77,3 @@ $accordion-content-color: foreground($accordion-background, $text);
 $tab-item-font-size: $base-font-size;
 $tab-item-padding: $line-height / 2  0;
 $tab-content-border: $border;
-
-$orbit-bullet-diameter: 0.8rem;
