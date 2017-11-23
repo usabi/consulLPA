@@ -1,7 +1,7 @@
 ---
 es:
   pages:
-    census_terms: Para verificar la cuenta hay que tener 16 años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación acepta dar su consentimiento para contrastar dicha información, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
+    census_terms: Para verificar la cuenta hay que tener %{minimum_age} años o más y estar empadronado aportando los datos indicados anteriormente, los cuales serán contrastados. Aceptando el proceso de verificación autoriza a que el AYUNTAMIENTO DE LAS PALMAS verifique que se encuentra empadronado en la ciudad, así como medios de contacto que figuren en dichos ficheros. Los datos aportados serán incorporados y tratados en un fichero indicado anteriormente en las condiciones de uso del portal.
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     intellectual_property: Propiedad intelectual
@@ -75,6 +75,7 @@ es:
       conditions: Condiciones de uso
       more_info: "Más información sobre %{org_name}"
       privacy: Política de Privacidad
+      intellectual_property: Propiedad intelectual
     verify:
       code: Código que has recibido en tu carta
       email: Email
