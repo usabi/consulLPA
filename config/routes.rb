@@ -32,7 +32,8 @@ Rails.application.routes.draw do
     patch :do_finish_signup, to: 'users/registrations#do_finish_signup'
   end
 
-  root 'welcome#index'
+  # root 'welcome#index'
+  root 'welcome#closed'
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 
