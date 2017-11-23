@@ -33,7 +33,7 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_1", minimum_age: Setting['min_age_to_participate']) %></p>
       <p><%= t("budgets.index.section_footer.help_text_2") %></p>
       <p><%= t("budgets.index.section_footer.help_text_3",
                 org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>

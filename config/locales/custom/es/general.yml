@@ -484,8 +484,8 @@ es:
       section_footer:
         title: Ayuda sobre las consultas
         description: Regístrate para poder responder las cuestiones que pregunta a sus vecinos el Ayuntamiento. Toma decisiones municipales de forma directa.
-        help_text_1: "En las consultas también se incluyen cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
-        help_text_2: "Para participar en la próxima consulta tienes que registrarte en %{org} y verificar tu cuenta. Pueden participar todas las personas empadronadas en la ciudad mayores de %{minimum_age} años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        help_text_1: "En las consultas se incluyen cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
+        help_text_2: "Para participar en la próxima consulta tienes que registrarte en %{org} y verificar tu cuenta. Pueden participar todas las personas empadronadas en la ciudad mayores de %{minimum_age} años. Los resultados serán vinculantes para el consistorio."
     show:
       dates_title: "Fechas de participación"
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."

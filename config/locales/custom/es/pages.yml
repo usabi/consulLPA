@@ -43,11 +43,11 @@ es:
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Consultas"
-        description: "Las propuestas ciudadanas que alcancen el 1% de apoyos, después de ser valoradas por el personal técnico del ayuntamiento pasarán a votación."
-        feature_1: "Para participar en la próxima votación tienes que %{link} y verificar tu cuenta."
+        description: "En las consultas se incluyen cuestiones que el Ayuntamiento somete a decisión directa de la ciudadanía."
+        feature_1: "Para participar en la próxima consulta tienes que %{link} y verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
-        feature_2: "Pueden votar todas las personas empadronadas en la ciudad mayores de %{minimum_age} años."
-        feature_3: "Los resultados de todas las votaciones serán vinculantes para el gobierno."
+        feature_2: "Pueden participar todas las personas empadronadas en la ciudad mayores de %{minimum_age} años."
+        feature_3: "Los resultados serán vinculantes para el consistorio."
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
