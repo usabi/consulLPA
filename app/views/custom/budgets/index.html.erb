@@ -33,8 +33,13 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1", minimum_age: Setting['min_age_to_participate']) %></p>
-      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
+      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
+      <ol>
+        <li><%= t("budgets.index.section_footer.help_text_2_1") %></li>
+        <li><%= t("budgets.index.section_footer.help_text_2_2") %></li>
+        <li><%= t("budgets.index.section_footer.help_text_2_3") %></li>
+        <li><%= t("budgets.index.section_footer.help_text_2_4") %></li>
+      </ol>
       <p><%= t("budgets.index.section_footer.help_text_3",
                 org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
       <p><%= t("budgets.index.section_footer.help_text_4") %></p>

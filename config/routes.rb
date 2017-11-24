@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   # root 'welcome#index'
   root 'welcome#closed'
+  get '/welcome_index', to: 'welcome#index'
   get '/welcome', to: 'welcome#welcome'
   get '/cuentasegura', to: 'welcome#verification', as: :cuentasegura
 

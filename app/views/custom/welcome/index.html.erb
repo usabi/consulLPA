@@ -4,15 +4,39 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<div class="jumbo highlight">
+<div class="orbit" role="region" aria-label="banner" data-orbit>
   <div class="row banner">
     <div class="small-12 medium-12 small-centered column text-center">
       <h1><%= t("layouts.header.open_city_title_html") %></h1>
     </div>
-    <div class="small-6 medium-3 large-3 small-centered">
+  </div>
+  <div class="row register">
+    <div class="small-6 medium-3 large-2 small-centered">
       <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
     </div>
   </div>
+	<div class="orbit-wrapper">
+    <div class="orbit-controls">
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    </div>
+		<ul class="orbit-container">
+			<li class="orbit-slide is-active">
+				<figure class="orbit-figure">
+					<%= image_tag('background_portada.jpg', class: 'orbit-image', alt: 'Banner') %>
+				</figure>
+			</li>
+			<li class="orbit-slide video">
+				<figure class="orbit-figure">
+          <iframe title= "Spot Participa Gran Canaria" src="https://www.youtube.com/embed/QNw2MFKZxvk?rel=0&showinfo=0&controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+				</figure>
+			</li>
+		</ul>
+		<nav class="orbit-bullets">
+			<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+			<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+		</nav>
+	</div>
 </div>
 <div class="small-12 row sub-banner">
   <p class="lead">
@@ -75,24 +99,28 @@
         <div class="small-12 medium-3 column">
           <%= link_to debates_path do %>
             <%= image_tag('debate.png') %>
+            <span>Debatimos</span>
             <p>Opina sobre las cuestiones de la ciudad</p>
           <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to proposals_path do %>
-            <%= image_tag('propon.png') %>
+            <%= image_tag('propon.jpg') %>
+            <span>Proponemos</span>
             <p>Crea propuestas ciudadanas</p>
           <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to budgets_path do %>
-            <%= image_tag('decide.png') %>
+            <%= image_tag('decides.jpg') %>
+            <span>Decidimos</span>
             <p>Elige a qué proyectos se destina el presupuesto participativo</p>
           <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to budgets_path do %>
-            <%= image_tag('decide.png') %>
+            <%= image_tag('consulta.png') %>
+            <span>Nos consultan</span>
             <p>Elige a qué proyectos se destina el presupuesto participativo</p>
           <% end %>
         </div>

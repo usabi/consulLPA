@@ -61,11 +61,11 @@
 
       <%= render 'shared/order_links', i18n_namespace: "proposals.index" %>
 
-      <% if @proposals.any? %>
-        <div class="show-for-small-only">
-          <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
-        </div>
-      <% end %>
+      <%# <% if @proposals.any? %>
+      <%#   <div class="show-for-small-only">
+      <%#     <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+      <%#   </div>
+      <%# <% end %>
 
       <div id="proposals-list">
         <% if @proposals.any? || current_user.blank? %>
@@ -93,7 +93,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= yield :header_addon %>
-        <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
+        <%# <%= link_to t("proposals.index.start_proposal"), new_proposal_path, class: 'button expanded' %>
 
         <% if params[:retired].blank? %>
           <%= render 'categories' %>

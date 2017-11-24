@@ -85,12 +85,13 @@ header{
   }
 }
 
-.jumbo.highlight {
-  background: transparent image-url('background_portada.jpg') no-repeat scroll 0 0/cover;
-  display: inline-block;
-  height: 25rem;
-  width: 100%;
-  margin-bottom: 0;
+.orbit {
+  // background: transparent image-url('background_portada.jpg') no-repeat scroll 0 0/cover;
+  // display: inline-block;
+  // height: 25rem;
+  // width: 100%;
+  // margin-bottom: 0;
+  // position: relative;
 
   h1 {
     background: rgba(10,10,9,0.7);
@@ -111,7 +112,36 @@ header{
   }
 
   .row {
-    max-width: 70%;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    top: 4em;
+    z-index: 999;
+    &.banner {
+      top: 3em;
+    }
+    &.register {
+      top: 19em;
+    }
+    div {
+      max-width: 70%;
+      margin: auto;
+    }
+  }
+
+  .orbit-wrapper {
+    width: 100%;
+    height: 530px;
+    .orbit-slide.video figure {
+      display: flex;
+      iframe {
+        width: 943px;
+        height: 530px;
+        margin: auto;
+      }
+    }
   }
 
   .button {
@@ -150,7 +180,7 @@ header{
 
 .expanded.budget li, .expanded.budget a{
   color: #fff;
-} 
+}
 
 .footer {
   border-top: none;
@@ -178,6 +208,21 @@ body.home-page main {
     background-color: $grey;
     h3 {
       text-transform: uppercase;
+    }
+    .row:nth-child(2) .column a {
+      display: block;
+      position: relative;
+      span {
+        position: absolute;
+        top: 8em;
+        left: 1.5em;
+        background-color: white;
+        color: #444;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 3px;
+      }
     }
   }
   h2 {
@@ -215,18 +260,23 @@ body.home-page main {
         }
       }
     }
+    .menu-icon.dark:after,
+    .menu-icon.dark:hover::after {
+      background: #000;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    }
   }
 
-  .jumbo.highlight {
+  .orbit {
     .row {
       max-width: 90%;
     }
     h1{
       padding: 1rem 1rem;
       line-height: 1.75rem;
-      font-size: 1.75rem; 
+      font-size: 1.75rem;
     }
-  } 
+  }
 }
 
 
