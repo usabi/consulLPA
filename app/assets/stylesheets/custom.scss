@@ -10,24 +10,48 @@ $brand-pink: #d5278a;
 $brand-blue: $brand;
 $grey: #f5f4f4;
 
-.top-bar{
-  height: 5rem;
-  .subnavigation{
-    background: transparent !important;
-  }
-  .top-bar-title{
-    height: 5rem;
-    margin: 0;
-    display: inline-flex;
-    a{ 
-      img{
-        width: auto;
-        position: relative;
-      }
+header{
+  background-color: initial;
+  .top-bar{
+    background-color: initial !important;
+    .subnavigation{
+      background: transparent !important;
     }
-    a:first-child{
-      img{
-        height: 7.5rem;
+    .menu > li{ 
+      a{
+        color: $brand-blue;
+      }
+      .button{
+        background: $brand-blue;
+        color: white; 
+      }
+      .button:hover {
+        background-color: lighten($brand-blue, 35%);
+      }
+
+    }
+    .top-bar-right{
+      width: 100%;
+    }
+    .top-bar-title{
+      display: inline-flex;
+      border: 1px solid rgba(0, 36, 126, 0.4);
+      border-radius: 50%;
+      padding: 20px;
+      box-shadow: 2px 2px 7px rgba(0, 36, 126, 0.7);
+      margin-bottom: -40px;
+      margin-top: 10px;
+      a{ 
+        img{
+          width: auto;
+          position: relative;
+        }
+      }
+      a:first-child{
+        img{
+          width: 100%;
+          height: auto;
+        }
       }
     }
   }
@@ -165,12 +189,7 @@ body.home-page main {
 
 @media screen and (max-width: 639px) {
   .top-bar {
-    height: 3rem;
-    .logo img {
-      height: 75px;
-      width: auto;
-      position: relative;
-    }
+    height: 4rem;
     .top-bar-right {
       background: white;
       margin-bottom: 0.5rem;
@@ -211,3 +230,7 @@ body.home-page main {
 }
 
 
+.margin-small{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}

@@ -23,27 +23,29 @@
     </span>
 
     <div id="responsive-menu">
-      <div class="top-bar-title medium-5 ">
+      <div class="top-bar-title medium-2 ">
         <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
           <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only', alt: t("layouts.header.logo")) %>
         <% end %>
-        <%= link_to t("layouts.header.external_link_town_hall"), class: "hide-for-small-only medium-offset-1" do %>
-          <%= image_tag(image_path_for('logo_lpa.png'),  alt: t("layouts.header.logo_town_hall")) %>
-        <% end %>
-        <%= link_to t("layouts.header.external_link_oficina_participacion"), class: "hide-for-small-only" do %>
-          <%= image_tag(image_path_for('logo_participacion_lpgc.png'),  alt: t("layouts.header.logo_oficina_participacion")) %>
-        <% end %>
       </div>
+      <div class="medium-6 column">
+        <div class="medium-9 small-12 column ">
+          <div class="top-bar-right">
+            <ul class="dropdown menu float-right" data-dropdown-menu>
+              <%= render "shared/admin_login_items" %>
+              <%= render "devise/menu/login_items" %>
+            </ul>
+          </div>
+        </div>
+        <div class="hide-for-small-only medium-3 column margin-small">
+          <%= link_to t("layouts.header.external_link_town_hall"), class: "hide-for-small-only" do %>
+            <%= image_tag(image_path_for('logo_lpa.jpg'),  alt: t("layouts.header.logo_town_hall")) %>
+          <% end %>
 
-      <div class="top-bar-right">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <%= render "shared/admin_login_items" %>
-          <%= render "devise/menu/login_items" %>
-        </ul>
-
-        <div class="show-for-small-only">
-          <div class="subnavigation row">
-            <%= render "shared/subnavigation" %>
+          <div class="show-for-small-only">
+            <div class="subnavigation row">
+              <%= render "shared/subnavigation" %>
+            </div>
           </div>
         </div>
       </div>
