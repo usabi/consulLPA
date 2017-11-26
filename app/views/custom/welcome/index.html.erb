@@ -4,43 +4,77 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<div class="orbit" role="region" aria-label="banner" data-orbit>
-  <div class="row banner">
-    <div class="small-12 medium-12 small-centered column text-center">
-      <h1><%= t("layouts.header.open_city_title_html") %></h1>
-    </div>
-  </div>
-  <div class="row register">
-    <div class="small-6 medium-3 large-2 small-centered">
-      <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
-    </div>
-  </div>
-	<div class="orbit-wrapper">
-    <div class="orbit-controls">
-      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-    </div>
-		<ul class="orbit-container">
-			<li class="orbit-slide is-active">
-				<figure class="orbit-figure">
-					<%= image_tag('background_portada.jpg', class: 'orbit-image', alt: 'Banner') %>
-				</figure>
-			</li>
-			<li class="orbit-slide video">
-				<figure class="orbit-figure">
+<div class="orbit no-margin-top" role="region" aria-label="banner" data-orbit>
+  <div class="orbit-wrapper">
+    <ul class="orbit-container">
+      <li class="orbit-slide is-active">
+        <div class="row banner">
+          <div class="small-12 medium-12 small-centered column text-center">
+            <h1><%= t("layouts.header.open_city_title_html") %></h1>
+          </div>
+        </div>
+        <div class="row register">
+          <div class="small-6 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+
+        <figure class="orbit-figure">
+          <%= image_tag('foto1.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
+        </figure>
+      </li>
+      <li class="orbit-slide video">
+        <figure class="orbit-figure">
           <iframe title= "Spot Participa Gran Canaria" src="https://www.youtube.com/embed/QNw2MFKZxvk?rel=0&showinfo=0&controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
-				</figure>
-			</li>
-		</ul>
-		<nav class="orbit-bullets">
-			<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-			<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-		</nav>
-	</div>
+        </figure>
+      </li>
+      <li class="orbit-slide is-active">
+        <div class="row banner">
+          <div class="small-12 medium-12 small-centered column text-center">
+            <h1><%= t("layouts.header.open_city_title_html") %></h1>
+          </div>
+        </div>
+        <div class="row register">
+          <div class="small-6 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+
+
+        <figure class="orbit-figure">
+          <%= image_tag('foto2.jpg', class: 'orbit-image', alt: 'Reuniones consejos') %>
+        </figure>
+      </li>
+      <li class="orbit-slide is-active">
+        <div class="row banner">
+          <div class="small-12 medium-12 small-centered column text-center">
+            <h1><%= t("layouts.header.open_city_title_html") %></h1>
+          </div>
+        </div>
+        <div class="row register">
+          <div class="small-6 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+
+
+        <figure class="orbit-figure">
+          <%= image_tag('foto3.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
+        </figure>
+      </li>
+
+    </ul>
+    <nav class="orbit-bullets">
+      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
+    </nav>
+  </div>
 </div>
 <div class="small-12 row sub-banner">
   <p class="lead">
-    <%= t("layouts.header.open_city_slogan_html") %>
+  <%= t("layouts.header.open_city_slogan_html") %>
   </p>
   <div class="small-8 medium-4 large-3 small-centered">
     <%= link_to t("layouts.header.more_info"), more_info_path, class: "button expanded large" %>
@@ -49,17 +83,17 @@
 
 <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
   <%= render "recommended",
-              recommended_debates: @recommended_debates,
-              recommended_proposals: @recommended_proposals %>
+    recommended_debates: @recommended_debates,
+    recommended_proposals: @recommended_proposals %>
 <% end %>
 
 <% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
   <main>
 
-    <div class="small-12 column text-center margin">
-      <div class="row small-12 medium-7">
-        <div class="small-12 medium-6 column padding">
-          <h2>
+  <div class="small-12 column text-center margin">
+    <div class="row small-12 medium-7">
+      <div class="small-12 medium-6 column padding">
+        <h2>
             <%= image_tag('debatimos.png') %>
             <%= t("welcome.debates.title") %>
           </h2>
@@ -98,7 +132,7 @@
       <div class="row">
         <div class="small-12 medium-3 column">
           <%= link_to debates_path do %>
-            <%= image_tag('debate.png') %>
+            <%= image_tag('debate.jpg') %>
             <span>Debatimos</span>
             <p>Opina sobre las cuestiones de la ciudad</p>
           <% end %>
@@ -107,21 +141,21 @@
           <%= link_to proposals_path do %>
             <%= image_tag('propon.jpg') %>
             <span>Proponemos</span>
-            <p>Crea propuestas ciudadanas</p>
+            <p>Crea propuestas ciudadanas y consigue apoyos para que se lleve a pleno</p>
           <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to budgets_path do %>
             <%= image_tag('decides.jpg') %>
             <span>Decidimos</span>
-            <p>Elige a qué proyectos se destina el presupuesto participativo</p>
-          <% end %>
+            <p>Decide a qué proyectos se destina el presupuesto participativo</p>
+         <% end %>
         </div>
         <div class="small-12 medium-3 column">
           <%= link_to budgets_path do %>
-            <%= image_tag('consulta.png') %>
+            <%= image_tag('consulta.jpg') %>
             <span>Nos consultan</span>
-            <p>Elige a qué proyectos se destina el presupuesto participativo</p>
+            <p>El Ayuntamiento nos consulta de manera directa</p>
           <% end %>
         </div>
       </div>
