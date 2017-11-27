@@ -254,40 +254,44 @@ body.home-page main {
 
 
 @media screen and (max-width: 639px) {
-  .top-bar {
-    height: 4rem;
-    .top-bar-right {
-      background: white;
-      margin-bottom: 0.5rem;
-      ul.menu {
-        text-align: right;
-        li {
-          display: inline-block;
-          a {
-            color: black;
-            background: none;
-          }
+  header{
+    .subnavigation{
+      background-color: $brand-blue;
+      ul.float-right {
+        float: initial !important;
+        li a{
+          line-height: 2.5rem;
         }
       }
     }
-    .subnavigation {
-      ul {
-        width: 100%;
-        li {
-          border-top: 1px solid $brand;
-          a {
-            color: black;
+    .top-bar {
+      height: 4rem;
+      .top-bar-right {
+        background-color: #eee;
+        border: 1px solid #ddd;
+        width: auto;
+        padding: 0 1rem;
+        ul.menu {
+          text-align: right;
+          li {
+            display: inline-block;
+            a {
+              color: black;
+              background: none;
+            }
           }
         }
       }
-    }
-    .menu-icon.dark:after,
-    .menu-icon.dark:hover::after {
-      background: #000;
-      box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+      .menu-icon.dark:after,
+      .menu-icon.dark:hover::after {
+        background: #000;
+        box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+      }
     }
   }
-
+  .help-header > .row > .small-12{
+    padding-left: 0.625rem;
+  }
   .orbit {
     .row {
       &.banner {
