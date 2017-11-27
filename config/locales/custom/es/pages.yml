@@ -16,7 +16,7 @@ es:
         other: "Otra información de interés"
       debates:
         title: "Debates"
-        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de gente de tu ciudad."
+        description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de personas de tu ciudad."
         feature_1: "Para crear un debate tienes que %{link}"
         feature_1_link: "registrarte en %{org_name}"
         feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
@@ -27,7 +27,7 @@ es:
         description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
         feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
         feature_1_link: "registrarte en %{org_name}"
-        feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de la gente</strong> (mayor de %{minimum_age} años empadronada en Las Palmas de Gran Canaria; %{min_supports} apoyos), después de ser valoradas por el personal técnico del ayuntamiento, pasan a votación por la ciudadanía."
+        feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de las personas</strong> mayores de %{minimum_age} años empadronadas en Las Palmas de Gran Canaria, después serán valoradas por el personal técnico del ayuntamiento y pasarán a votación por la ciudadanía."
         feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
         image_alt: "Botón para apoyar una propuesta"
         figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
