@@ -199,8 +199,14 @@ header{
     padding-top: 5.5rem;
 }
 
-.expanded.budget li, .expanded.budget a{
-  color: #fff;
+.expanded.budget {
+  background: white;
+  * {
+    color: #222!important;
+  }
+  .info {
+    background: white;
+  }
 }
 
 .footer {
