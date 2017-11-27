@@ -39,6 +39,7 @@ header{
       margin-top: 10px;
       background: white;
       position: absolute;
+      max-width: 14rem;
       z-index: 1;
       a{ 
         img{
@@ -114,12 +115,11 @@ header{
     background: linear-gradient(to right, rgba(10,10,9,0) 0%, rgba(10,10,9,0.7) 50%, rgba(10,10,9,0.7) 51%, rgba(10,10,9,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffeb3b', endColorstr='#ffeb3b', GradientType=1 );
     color: white;
-    margin-top: 6rem;
     font-weight: 300;
-    margin-bottom: 4rem;
     font-style: italic;
     padding: 1rem 3rem;
-    line-height: 3rem;
+    line-height: 4rem;
+    font-size: 4rem;
   }
 
   .row {
@@ -128,13 +128,14 @@ header{
     margin: auto;
     position: absolute;
     left: 0;
-    top: 4em;
+    bottom: 0;
     z-index: 999;
     &.banner {
-      top: 3em;
+      bottom: 7em;
     }
     &.register {
-      top: 19em;
+      text-transform: uppercase;
+      bottom: 3em;
     }
     div {
       max-width: 70%;
@@ -288,12 +289,26 @@ body.home-page main {
 
   .orbit {
     .row {
-      max-width: 90%;
-    }
-    h1{
-      padding: 1rem 1rem;
-      line-height: 1.75rem;
-      font-size: 1.75rem;
+      &.banner {
+        bottom: 3em;
+        h1{
+          padding: 0.5rem 1rem;
+          line-height: 1.75rem;
+          font-size: 1.75rem;
+        }
+      }
+      &.register {
+        text-transform: uppercase;
+        bottom: 0;
+        .button{
+          font-size: 0.9rem;
+          padding: 0.3rem;
+        }  
+      }
+      div {
+        max-width: 90%;
+        margin: auto;
+      }
     }
   }
 }
