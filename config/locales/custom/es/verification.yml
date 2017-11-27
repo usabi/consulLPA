@@ -48,8 +48,8 @@ es:
         flash:
           success: Residencia verificada
       new:
-        accept_terms_text: Acepto %{terms_url} al Padrón
-        accept_terms_text_title: Acepto los términos de acceso al Padrón
+        accept_terms_text: Autorizo al Ayuntamiento de Las Palmas de Gran Canaria a que verifique que estoy empadronado en la ciudad (%{terms_url})
+        accept_terms_text_title: Autorizo al Ayuntamiento de Las Palmas de Gran Canaria a que verifique que estoy empadronado en la ciudad
         date_of_birth: Fecha de nacimiento
         document_number: Número de documento
         document_number_help_title: Ayuda
@@ -68,7 +68,7 @@ es:
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
         postal_code_note: Para verificar tus datos debes estar empadronado
-        terms: los términos de acceso
+        terms: términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
     sms:
