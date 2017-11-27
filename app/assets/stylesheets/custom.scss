@@ -222,8 +222,7 @@ body.home-page main {
     h3 {
       text-transform: uppercase;
     }
-    .row:nth-child(2) .column a {
-      display: block;
+    .row:nth-child(2) .column a div {
       position: relative;
       span {
         position: absolute;
