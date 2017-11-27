@@ -81,7 +81,14 @@ header{
 }
 
 
-.auth-image h1 {
+.auth-image h1 > a > img{
+  border: 1px solid rgba(0, 36, 126, 0.4);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 2px 2px 7px rgba(0, 36, 126, 0.7);
+  margin-top: 10px;
+  background: white;
+
   margin-top: 2.5rem;
   img {
     height: auto;
