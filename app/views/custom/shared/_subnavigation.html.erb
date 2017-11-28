@@ -17,7 +17,7 @@
           accesskey: "2",
           title: t("shared.go_to_page") + t("layouts.header.proposals") %>
     </li>
-    </end>
+    <% end %>
     <% if feature?(:polls) %>
       <li>
         <%= layout_menu_link_to t("layouts.header.poll_questions"),
