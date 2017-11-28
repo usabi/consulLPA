@@ -30,31 +30,6 @@ header{
     .top-bar-right{
       width: 100%;
     }
-    .top-bar-title{
-      display: inline-flex;
-      border: 1px solid rgba(0, 36, 126, 0.4);
-      border-radius: 50%;
-      padding: 20px;
-      box-shadow: 2px 2px 7px rgba(0, 36, 126, 0.7);
-      margin-top: 10px;
-      margin-right: 0;
-      background: white;
-      position: absolute;
-      max-width: 14rem;
-      z-index: 1;
-      a{ 
-        img{
-          width: auto;
-          position: relative;
-        }
-      }
-      a:first-child{
-        img{
-          width: 100%;
-          height: auto;
-        }
-      }
-    }
   }
   .subnavigation{
     ul li{
@@ -62,6 +37,34 @@ header{
       margin-right: 0;
       a {
         line-height: 4.5rem;
+      }
+    }
+  }
+}
+
+body:not(.admin) header {
+  .top-bar-title{
+    display: inline-flex;
+    border: 1px solid rgba(0, 36, 126, 0.4);
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 2px 2px 7px rgba(0, 36, 126, 0.7);
+    margin-top: 10px;
+    margin-right: 0;
+    background: white;
+    position: absolute;
+    max-width: 14rem;
+    z-index: 1;
+    a{ 
+      img{
+        width: auto;
+        position: relative;
+      }
+    }
+    a:first-child{
+      img{
+        width: 100%;
+        height: auto;
       }
     }
   }
