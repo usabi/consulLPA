@@ -150,6 +150,9 @@ body:not(.admin) header {
   .orbit-wrapper {
     // width: 100vw;
     // height: calc(100vw / 1.78);
+    .orbit-slide img{
+      image-rendering: inherit;
+    }
     .orbit-slide.video figure {
       display: flex;
       iframe {
@@ -202,6 +205,9 @@ body:not(.admin) header {
     padding-top: 3.5rem;
 }
 
+.poll.with-image img{ 
+  width: 100%;
+}
 .expanded.budget {
   background: white;
   * {

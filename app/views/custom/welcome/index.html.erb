@@ -28,7 +28,7 @@
       <!--     <iframe title= "Spot Participa Gran Canaria" src="https://www.youtube.com/embed/QNw2MFKZxvk?rel=0&#38;showinfo=0&#38;controls=1" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe> -->
       <!--   </figure> -->
       <!-- </li> -->
-      <li class="orbit-slide is-active">
+      <li class="orbit-slide">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
             <h1><%= t("layouts.header.open_city_title_html") %></h1>
@@ -39,13 +39,11 @@
             <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
           </div>
         </div>
-
-
         <figure class="orbit-figure">
           <%= image_tag('foto2.jpg', class: 'orbit-image', alt: 'Reuniones consejos') %>
         </figure>
       </li>
-      <li class="orbit-slide is-active">
+      <li class="orbit-slide">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
             <h1><%= t("layouts.header.open_city_title_html") %></h1>
@@ -60,12 +58,22 @@
           <%= image_tag('foto3.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
         </figure>
       </li>
-
+      <li class="orbit-slide">
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+        <figure class="orbit-figure">
+          <%= image_tag('foto4.jpg', class: 'orbit-image', alt: 'Una playa libre de humos') %>
+        </figure>
+      </li>
     </ul>
     <nav class="orbit-bullets">
       <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
       <!-- <button data&#45;slide="3"><span class="show&#45;for&#45;sr">Second slide details.</span></button> -->
     </nav>
   </div>
