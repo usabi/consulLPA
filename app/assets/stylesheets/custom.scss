@@ -194,13 +194,12 @@ body:not(.admin) header {
     }
   }
 }
+
+
 .button{
  padding: 0.75em 1em;
 }
 
-.help-header > .row > .small-12 {
-  padding-left: 17vw;
-}
 
 .poll.with-image img{ 
   width: 100%;
@@ -273,7 +272,18 @@ body.home-page main {
 }
 
 
+@media screen and (min-width: 640px) {
+  .help-header > .row > .small-12, .activity > .column > h2, .account > .column > img, .jumbo.light > .row >.column > h2, .margin-top > .column > h1, .margin-top > div > h1 {
+    padding-left: 17vw;
+  }
+  .menu > a.back, .polls-show  a.back{
+    padding-left: 14vw;
+  }
+  .padding{
+    padding-top: 3rem;
+  }
 
+} 
 @media screen and (max-width: 639px) {
   header{
     .subnavigation{
