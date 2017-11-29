@@ -20,6 +20,22 @@
         </div>
 
         <figure class="orbit-figure">
+          <%= image_tag('foto5.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <div class="row banner">
+          <div class="small-12 medium-12 small-centered column text-center">
+            <h1><%= t("layouts.header.open_city_title_html") %></h1>
+          </div>
+        </div>
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+
+        <figure class="orbit-figure">
           <%= image_tag('foto1.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
         </figure>
       </li>
@@ -74,6 +90,7 @@
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
       <!-- <button data&#45;slide="3"><span class="show&#45;for&#45;sr">Second slide details.</span></button> -->
     </nav>
   </div>
