@@ -101,6 +101,10 @@ body:not(.admin) header {
   }
 }
 
+.polls-show .orbit-slide img {
+  image-rendering: inherit;
+}
+
 .orbit {
   // background: transparent image-url('background_portada.jpg') no-repeat scroll 0 0/cover;
   // display: inline-block;
