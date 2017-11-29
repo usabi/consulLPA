@@ -14,13 +14,13 @@ header{
   background-color: initial;
   .top-bar{
     background-color: initial !important;
-    .menu > li{ 
+    .menu > li{
       a{
         color: $brand-blue;
       }
       .button{
         background: $brand-blue;
-        color: white; 
+        color: white;
       }
       .button:hover {
         background-color: lighten($brand-blue, 35%);
@@ -55,7 +55,7 @@ body:not(.admin) header {
     position: absolute;
     max-width: 14rem;
     z-index: 1;
-    a{ 
+    a{
       img{
         width: auto;
         position: relative;
@@ -205,8 +205,9 @@ body:not(.admin) header {
 }
 
 
-.poll.with-image img{ 
+.poll.with-image img{
   width: 100%;
+  height: auto;
 }
 
 .expanded.budget {
@@ -270,9 +271,6 @@ body.home-page main {
       }
     }
   }
-  h2 {
-    white-space: nowrap;
-  }
 }
 
 
@@ -287,7 +285,7 @@ body.home-page main {
     padding-top: 3rem;
   }
 
-} 
+}
 @media screen and (max-width: 639px) {
   header{
     .subnavigation{
@@ -343,7 +341,7 @@ body.home-page main {
         .button{
           font-size: 0.9rem;
           padding: 0.3rem;
-        }  
+        }
       }
       div {
         max-width: 90%;
