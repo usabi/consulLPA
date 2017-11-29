@@ -28,7 +28,7 @@ class SMSApi
     { user_id: Rails.application.secrets.sms_username,
       departamento_id: Rails.application.secrets.sms_department,
       telefono_individual: phone,
-      texto: "Clave para verificarte: #{code}. Participa LPA",
+      texto: "Clave para verificarte: #{code}. LPGC Decide",
       passwd: Rails.application.secrets.sms_password
     }
   end
@@ -36,10 +36,6 @@ class SMSApi
   def success?(response)
     xml = Nokogiri::XML(response.body)
     xml.xpath('estado').text == 'ok'
-  end
-
-  def end_point_available?
-    Rails.env.development? || Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
   end
 
   def stubbed_response
