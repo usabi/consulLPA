@@ -38,6 +38,10 @@ class SMSApi
     xml.xpath('estado').text == 'ok'
   end
 
+  def end_point_available?
+    Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+  end
+
   def stubbed_response
     {
       estado: 'ok'
