@@ -475,12 +475,12 @@ FactoryGirl.define do
     ends_at { 1.month.from_now }
 
     trait :current do
-      starts_at { 2.days.ago }
-      ends_at { 2.days.from_now }
+      starts_at { 2.hours.ago }
+      ends_at { 2.hours.from_now }
     end
 
     trait :incoming do
-      starts_at { 2.days.from_now }
+      starts_at { 2.hours.from_now }
       ends_at { 1.month.from_now }
     end
 
@@ -491,7 +491,7 @@ FactoryGirl.define do
 
     trait :recounting do
       starts_at { 1.month.ago }
-      ends_at { Date.current }
+      ends_at { 10.hours.ago  }
     end
 
     trait :published do

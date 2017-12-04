@@ -24,6 +24,16 @@ describe :poll do
       expect(poll).to_not be_valid
     end
 
+    it "should not be valid with an incorrect start date hour" do
+      poll.starts_at_hour = '08:0'
+      expect(poll).to_not be_valid
+    end
+
+    it "should not be valid with an incorrect end date hour" do
+      poll.ends_at_hour = '20:0'
+      expect(poll).to_not be_valid
+    end
+
     it "should not be valid without a proper start/end date range" do
       poll.starts_at = 1.week.ago
       poll.ends_at = 2.months.ago
