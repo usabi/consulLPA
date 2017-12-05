@@ -940,6 +940,7 @@ es:
           proposals: Propuestas
           budgets: Presupuestos abiertos
           budget_investments: Propuestas de inversión
+          poll_voters: Votos en consultas
           spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
