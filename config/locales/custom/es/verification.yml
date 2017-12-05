@@ -65,6 +65,7 @@ es:
         census_error_help: Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una %{offices}.
         error_verifying_census_offices: oficina de Atención al ciudadano
         birth_date_no_correct: "Fecha de nacimiento incorrecta."
+        error_to_many_connections: No se ha podido verificar su residencia por problemas de conexión con el padrón, inténtelo de nuevo en unos minutos.
         form_errors: evitaron verificar tu residencia
         postal_code: Código postal
         postal_code_note: Para verificar tus datos debes estar empadronado

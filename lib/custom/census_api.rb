@@ -50,6 +50,9 @@ class CensusApi
           :birth_date_no_correct
         when 'NO OK ERROR EN CENSO'
           :error_verifying_census
+        when 'NO OK DEMASIADAS CONEXIONES'
+          :error_to_many_connections
+
       end
     end
 
@@ -70,7 +73,9 @@ class CensusApi
   end
 
   def stubbed_response(document_type, document_number, date_of_birth)
-    if document_number == '12345678Z'
+    return stubbed_to_many_connections_response if date_of_birth == '01/01/1900'.to_date
+
+    if document_number == '12345679Z'
       if date_of_birth == '01/01/1970'.to_date
         stubbed_valid_response
       else
@@ -88,9 +93,12 @@ class CensusApi
   def stubbed_invalid_birth_date_response
     "<respuesta>\n<estado>OK FECHA NO COINCIDE</estado>\n<cp>35000</cp>\n<distrito>1</distrito>\n</respuesta>"
   end
+  def stubbed_to_many_connections_response
+    "<respuesta>\n<estado>NO OK DEMASIADAS CONEXIONES</estado></respuesta>"
+  end
 
   def stubbed_invalid_response
-    "<respuesta>\n<estado>NO OK ERROR EN CENSO</estado>"
+    "<respuesta>\n<estado>NO OK ERROR EN CENSO</estado></respuesta>"
   end
 
 end

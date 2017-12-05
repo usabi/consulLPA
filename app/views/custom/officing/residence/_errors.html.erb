@@ -1,4 +1,4 @@
-<% if error = ([:error_verifying_census, :birth_date_no_correct] & @residence.errors.keys).first %>
+<% if error = ([:error_verifying_census, :birth_date_no_correct, :error_to_many_connections] & @residence.errors.keys).first %>
   <div id="error_explanation" data-alert class="callout alert" data-closable>
     <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
       <span aria-hidden="true">&times;</span>
