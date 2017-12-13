@@ -5,3 +5,10 @@
 //
 //
 
+$(document).ready(function() {
+  $('.orbit').on('beforeslidechange.zf.orbit', function() {
+    $('figure iframe').each(function() {
+      $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    })
+  })
+})
