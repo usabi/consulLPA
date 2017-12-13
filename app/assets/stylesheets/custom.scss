@@ -160,7 +160,8 @@ body:not(.admin) header {
     .orbit-slide.video figure {
       display: flex;
       iframe {
-        height: calc(100vw / 1.78);
+//        height: calc(100vw / 1.78);
+        height: calc(100vw / 2.4);
         width: 100vw;
         margin: auto;
       }
@@ -223,8 +224,14 @@ body:not(.admin) header {
 .jumbo-budget {
   background: #f8f9fb;
   border-bottom: 1px solid #f8f9fb;
-  h1, h2, a.back {
-    color: #222;
+  h1, h2, a.back, span {
+    color: #222!important;
+  }
+  .button{
+    border: 1px solid $brand-blue;
+  }
+  .progress-bar-nav{
+    background-color: transparent;
   }
 }
 
