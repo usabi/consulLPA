@@ -105,14 +105,21 @@ body:not(.admin) header {
   image-rendering: inherit;
 }
 
-.orbit {
-  // background: transparent image-url('background_portada.jpg') no-repeat scroll 0 0/cover;
-  // display: inline-block;
-  // height: 25rem;
-  // width: 100%;
-  // margin-bottom: 0;
-  // position: relative;
+.home-page {
+  .row.videos .videoWrapper {
+    position: relative;
+    padding-bottom: 56%;
+    margin-top: 20px;
+    iframe {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
 
+.orbit {
   h1 {
     background: rgba(10,10,9,0.7);
     background: -moz-linear-gradient(left, rgba(10,10,9,0) 0%, rgba(10,10,9,0.7) 50%, rgba(10,10,9,0.7) 51%, rgba(10,10,9,0) 100%);
@@ -152,19 +159,8 @@ body:not(.admin) header {
   }
 
   .orbit-wrapper {
-    // width: 100vw;
-    // height: calc(100vw / 1.78);
     .orbit-slide img{
       image-rendering: inherit;
-    }
-    .orbit-slide.video figure {
-      display: flex;
-      iframe {
-//        height: calc(100vw / 1.78);
-        height: calc(100vw / 2.4);
-        width: 100vw;
-        margin: auto;
-      }
     }
   }
 
@@ -332,6 +328,7 @@ body.home-page main {
   .help-header > .row > .small-12{
     padding-left: 0.625rem;
   }
+
   .orbit {
     .row {
       &.banner {
