@@ -29,7 +29,7 @@ es:
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
-      accepting: Presentación de proyectos
+      accepting: Evaluación de proyectos
       reviewing: Revisión interna de proyectos
       selecting: Fase de apoyos
       valuating: Evaluación de proyectos
@@ -104,7 +104,7 @@ es:
         unfeasibility_explanation: Informe de inviabilidad
         code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
         location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Organización: <strong>%{name}</strong>'
+        organization_name_html: 'Presentada por: <strong>%{name}</strong>'
         share: Compartir
         title: Propuesta de inversión
         supports: Apoyos
