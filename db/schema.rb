@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122094603) do
+ActiveRecord::Schema.define(version: 20180313112454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,14 +131,14 @@ ActiveRecord::Schema.define(version: 20171122094603) do
     t.string   "title"
     t.text     "description"
     t.string   "external_url"
-    t.integer  "price",                      limit: 8
+    t.decimal  "price",                                 precision: 16, scale: 2, default: 0.0
     t.string   "feasibility",                limit: 15, default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
     t.text     "internal_comments"
     t.boolean  "valuation_finished",                    default: false
     t.integer  "valuator_assignments_count",            default: 0
-    t.integer  "price_first_year",           limit: 8
+    t.decimal  "price_first_year",                      precision: 16, scale: 2, default: 0.0
     t.string   "duration"
     t.datetime "hidden_at"
     t.integer  "cached_votes_up",                       default: 0
