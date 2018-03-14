@@ -160,6 +160,8 @@ es:
         undefined: Sin definir
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        location: Ubicación
+        organization_name: Presentada por
         compatibility:
           title: Compatibilidad
           "true": Incompatible
