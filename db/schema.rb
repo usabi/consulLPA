@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20180313112454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -132,34 +132,34 @@ ActiveRecord::Schema.define(version: 20180313112454) do
     t.text     "description"
     t.string   "external_url"
     t.decimal  "price",                                 precision: 16, scale: 2, default: 0.0
-    t.string   "feasibility",                limit: 15, default: "undecided"
+    t.string   "feasibility",                limit: 15,                          default: "undecided"
     t.text     "price_explanation"
     t.text     "unfeasibility_explanation"
     t.text     "internal_comments"
-    t.boolean  "valuation_finished",                    default: false
-    t.integer  "valuator_assignments_count",            default: 0
+    t.boolean  "valuation_finished",                                             default: false
+    t.integer  "valuator_assignments_count",                                     default: 0
     t.decimal  "price_first_year",                      precision: 16, scale: 2, default: 0.0
     t.string   "duration"
     t.datetime "hidden_at"
-    t.integer  "cached_votes_up",                       default: 0
-    t.integer  "comments_count",                        default: 0
-    t.integer  "confidence_score",                      default: 0,           null: false
-    t.integer  "physical_votes",                        default: 0
+    t.integer  "cached_votes_up",                                                default: 0
+    t.integer  "comments_count",                                                 default: 0
+    t.integer  "confidence_score",                                               default: 0,           null: false
+    t.integer  "physical_votes",                                                 default: 0
     t.tsvector "tsv"
-    t.datetime "created_at",                                                  null: false
-    t.datetime "updated_at",                                                  null: false
+    t.datetime "created_at",                                                                           null: false
+    t.datetime "updated_at",                                                                           null: false
     t.integer  "heading_id"
     t.string   "responsible_name"
     t.integer  "budget_id"
     t.integer  "group_id"
-    t.boolean  "selected",                              default: false
+    t.boolean  "selected",                                                       default: false
     t.string   "location"
     t.string   "organization_name"
     t.datetime "unfeasible_email_sent_at"
-    t.integer  "ballot_lines_count",                    default: 0
+    t.integer  "ballot_lines_count",                                             default: 0
     t.integer  "previous_heading_id"
-    t.boolean  "winner",                                default: false
-    t.boolean  "incompatible",                          default: false
+    t.boolean  "winner",                                                         default: false
+    t.boolean  "incompatible",                                                   default: false
     t.integer  "community_id"
   end
 
