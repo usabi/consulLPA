@@ -75,7 +75,7 @@ class CensusApi
   def stubbed_response(document_type, document_number, date_of_birth)
     return stubbed_to_many_connections_response if date_of_birth == '01/01/1900'.to_date
 
-    if document_number == '12345679Z'
+    if document_number == '12345678Z'
       if date_of_birth == '01/01/1970'.to_date
         stubbed_valid_response
       else

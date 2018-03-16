@@ -13,7 +13,6 @@ class Verification::Management::Document
 
   def in_census?
     response = CensusCaller.new.call(document_type, document_number, date_of_birth)
-    debugger
     response.valid?
   end
 
