@@ -11,9 +11,9 @@ $brand-blue: $brand;
 $grey: #f5f4f4;
 
 header{
-  background-color: initial;
+  background-color: white !important;
   .top-bar{
-    background-color: initial !important;
+    background-color: white !important;
     .menu > li{
       a{
         color: $brand-blue;
