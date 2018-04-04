@@ -21,6 +21,7 @@ es:
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
         change_ballot: cambiar tus votos
+        not_minimum_voting_age: Debe ser mayor de 18 años para poder votar
     groups:
       show:
         title: Selecciona una opción

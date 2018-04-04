@@ -683,6 +683,12 @@ describe Budget::Investment do
           expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
         end
 
+        it "rejects votes when voting is not allowed (wrong age)" do
+          budget.phase = "balloting"
+          user.date_of_birth = Time.now - 17.years
+          expect(investment.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_minimum_voting_age)
+        end
+
         it "accepts valid selections" do
           budget.phase = "selecting"
           expect(investment.reason_for_not_being_selectable_by(user)).to be_nil

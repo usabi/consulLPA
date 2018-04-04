@@ -339,14 +339,14 @@ feature 'Ballots' do
 
       within("#budget_group_#{group1.id}") do
         expect(page).to have_content "#{group1.name} - #{heading1.name}"
-        expect(page).to have_content "Amount spent €20"
-        expect(page).to have_link "You still have €80 to invest.", href: budget_group_path(budget, group1)
+        expect(page).to have_content "Amount spent €20.00"
+        expect(page).to have_link "You still have €80.00 to invest.", href: budget_group_path(budget, group1)
       end
 
       within("#budget_group_#{group2.id}") do
         expect(page).to have_content "#{group2.name} - #{heading2.name}"
-        expect(page).to have_content "Amount spent €15"
-        expect(page).to have_content "You still have €35 to invest"
+        expect(page).to have_content "Amount spent €15.00"
+        expect(page).to have_content "You still have €35.00 to invest"
       end
     end
 
@@ -465,6 +465,20 @@ feature 'Ballots' do
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
         expect(page).to have_content 'Only verified users can vote on investments'
+        expect(page).to have_selector('.in-favor a', visible: false)
+      end
+    end
+
+    scenario 'User is not older than 18 years', :js do
+      user.date_of_birth = Time.current - 17.years
+      investment = create(:budget_investment, :selected, heading: new_york)
+
+      login_as(user)
+      visit budget_investments_path(budget, heading_id: new_york.id)
+
+      within("#budget_investment_#{investment.id}") do
+        find("div.ballot").hover
+        expect(page).to have_content 'You have to be at least 18 years old'
         expect(page).to have_selector('.in-favor a', visible: false)
       end
     end

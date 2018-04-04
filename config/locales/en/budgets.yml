@@ -21,6 +21,7 @@ en:
         no_ballots_allowed: Selecting phase is closed
         different_heading_assigned: You have already voted a different heading
         change_ballot: change your votes
+        not_minimum_voting_age: You have to be at least 18 years old
     groups:
       show:
         title: Select an option
