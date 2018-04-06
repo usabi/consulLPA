@@ -18,10 +18,11 @@
         <!--     <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %> -->
         <!--   </div> -->
         <!-- </div> -->
-
-        <figure class="orbit-figure">
-          <%= image_tag('foto6.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
-        </figure>
+        <a href="https://decide.laspalmasgc.es/docs/flyers_presupuestos.pdf" target="_blank">
+          <figure class="orbit-figure">
+            <%= image_tag('foto6.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
+          </figure>
+        </a>
       </li>
 
       <li class="orbit-slide">
@@ -120,6 +121,22 @@
           <%= image_tag('foto3.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
         </figure>
       </li>
+      <li class="orbit-slide">
+        <div class="row banner">
+          <div class="small-12 medium-12 small-centered column text-center">
+            <h1><%= t("layouts.header.open_city_title_html") %></h1>
+          </div>
+        </div>
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+          </div>
+        </div>
+        <figure class="orbit-figure">
+          <%= image_tag('foto4.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
+        </figure>
+      </li>
+
     </ul>
     <nav class="orbit-bullets">
       <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
@@ -129,6 +146,7 @@
       <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="5"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="6"><span class="show-for-sr">Second slide details.</span></button>
+      <button data-slide="7"><span class="show-for-sr">Second slide details.</span></button>
       <!-- <button data&#45;slide="3"><span class="show&#45;for&#45;sr">Second slide details.</span></button> -->
     </nav>
   </div>
