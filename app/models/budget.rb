@@ -135,6 +135,9 @@ class Budget < ActiveRecord::Base
 
     def sanitize_descriptions
       s = WYSIWYGSanitizer.new
+      WYSIWYGSanitizer::ALLOWED_TAGS += ['a', 'img']
+      WYSIWYGSanitizer::ALLOWED_ATTRIBUTES += ['href', 'target']
+
       PHASES.each do |phase|
         sanitized = s.sanitize(send("description_#{phase}"))
         send("description_#{phase}=", sanitized)
