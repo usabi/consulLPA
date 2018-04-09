@@ -6,4 +6,16 @@ class Budget
                                                       locale: I18n.default_locale,
                                                       unit: currency_symbol)
   end
+
+  def investments_orders
+    case phase
+    when 'accepting', 'reviewing'
+      %w{random}
+    when 'balloting', 'reviewing_ballots'
+      %w{price}
+    else
+      %w{random confidence_score}
+    end
+  end
+
 end
