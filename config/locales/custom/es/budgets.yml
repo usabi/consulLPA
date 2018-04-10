@@ -132,7 +132,7 @@ es:
         different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar mis votos"
-        finish_ballot_confirm: "Se cerrará la sesión, ¿estás seguro?. Recuerda que puedes cambiar tus votaciones en cualquier momento hasta el 22 de Abril de 2018."
+        finish_ballot_confirm: "Se cerrará la sesión, ¿estás seguro?. Recuerda que puedes cambiar tus votos en cualquier momento hasta el 22 de Abril de 2018."
     progress_bar:
       available: "Disponible: "
     show:
