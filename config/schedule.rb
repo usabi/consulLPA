@@ -26,3 +26,11 @@ end
 every 1.day, at: '5:00 am' do
   rake "-s sitemap:refresh"
 end
+
+every :reboot do
+  command "cd /home/usabi/consul/current && RAILS_ENV=production bin/delayed_job start -n 2"
+end
+
+every 10.hours do
+  command "cd /home/usabi/consul/current && RAILS_ENV=production bin/delayed_job restart -n 2"
+end
