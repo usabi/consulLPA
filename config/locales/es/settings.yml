@@ -32,6 +32,7 @@ es:
       twitter_login: Registro con Twitter
       facebook_login: Registro con Facebook
       google_login: Registro con Google
+      proposals: Propuestas
       debates: Debates
       polls: Votaciones
       signature_sheets: Hojas de firmas
@@ -41,13 +42,22 @@ es:
       legislation: Legislación
       user:
         recommendations: Recomendaciones
-      community: Comunidad en propuestas y proyectos de inversión
-      map: Geolocalización de propuestas y proyectos de inversión
+        skip_verification: Omitir verificación de usuarios
+        recommendations_on_debates: Recomendaciones en debates
+        recommendations_on_proposals: Recomendaciones en propuestas
+      community: Comunidad en propuestas y proyectos de gasto
+      map: Geolocalización de propuestas y proyectos de gasto
+      allow_images: Permitir subir y mostrar imágenes
+      allow_attached_documents: Permitir creación de documentos adjuntos
+      guides: Guías para crear propuestas o proyectos de inversión
+      public_stats: Estadísticas públicas
+    related_content_score_threshold: Umbral de puntuación de contenido relacionado
     map_latitude: Latitud
     map_longitude: Longitud
     map_zoom: Zoom
     mailer_from_name: Nombre email remitente
     mailer_from_address: Dirección email remitente
+    meta_title: "Título del sitio (SEO)"
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     verification_offices_url: URL oficinas verificación
