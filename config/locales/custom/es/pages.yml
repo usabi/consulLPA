@@ -5,20 +5,21 @@ es:
     conditions: Condiciones de uso
     general_terms: Términos y Condiciones
     intellectual_property: Propiedad intelectual
-    more_info:
-      title: "Descubre %{org_name}"
+    help:
+      title: "Descubre %{org}"
       subtitle: "Aprende todo lo que puedes hacer en esta web."
-      guide: 'Esta guía explica cada una de las secciones de %{org_name}. Puedes ampliar la información en los enlaces de "Información detallada".'
+      guide: 'Esta guía explica cada una de las secciones de %{org}. Puedes ampliar la información en los enlaces de "Información detallada".'
       menu:
         debates: "Debates"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
+        polls: "Consultas"
         other: "Otra información de interés"
       debates:
         title: "Debates"
         description: "Crea un hilo en el que debatir sobre cualquier tema que quieras compartir con el resto de personas de tu ciudad."
         feature_1: "Para crear un debate tienes que %{link}"
-        feature_1_link: "registrarte en %{org_name}"
+        feature_1_link: "registrarte en %{org}"
         feature_2_html: "Los debates pueden ser valorados utilizando los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong> que encontrarás en cada uno de ellos."
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
@@ -26,7 +27,7 @@ es:
         title: "Propuestas"
         description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
         feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
-        feature_1_link: "registrarte en %{org_name}"
+        feature_1_link: "registrarte en %{org}"
         feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de las personas</strong> mayores de %{minimum_age} años empadronadas en Las Palmas de Gran Canaria, después serán valoradas por el personal técnico del ayuntamiento y pasarán a votación por la ciudadanía."
         feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
         image_alt: "Botón para apoyar una propuesta"
@@ -35,10 +36,10 @@ es:
         title: "Presupuestos participativos"
         description: "Decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal."
         description_2: "La elaboración de los presupuestos participativos se realiza en varias fases:"
-        feature_1: "La ciudadanía presenta sus propuestas"
-        feature_2_html: "Los servicios municipales evalúan la viabilidad económica y jurídica de las propuestas"
-        feature_3_html: "El Consejo Social presenta el informe-proposición sobre la viabilidad de las propuestas"
-        feature_4_html: "Los ciudadanos votan para decidir las propuestas que se incluirán finalmente en los presupuestos
+        phase_1_html: "La ciudadanía presenta sus propuestas"
+        phase_2_html: "Los servicios municipales evalúan la viabilidad económica y jurídica de las propuestas"
+        phase_3_html: "El Consejo Social presenta el informe-proposición sobre la viabilidad de las propuestas"
+        phase_4_html: "Los ciudadanos votan para decidir las propuestas que se incluirán finalmente en los presupuestos
 "
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption_html: 'Fase de "Votación" de los presupuestos participativos.'
@@ -74,7 +75,7 @@ es:
     titles:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
-      more_info: "Más información sobre %{org_name}"
+      more_info: "Más información sobre %{org}"
       privacy: Política de Privacidad
       intellectual_property: Propiedad intelectual
     verify:

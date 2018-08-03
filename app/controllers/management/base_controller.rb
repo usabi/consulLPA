@@ -5,6 +5,7 @@ class Management::BaseController < ActionController::Base
   before_action :set_locale
 
   helper_method :managed_user
+  helper_method :current_user
 
   private
 
@@ -38,6 +39,14 @@ class Management::BaseController < ActionController::Base
       session[:locale] ||= I18n.default_locale
 
       I18n.locale = session[:locale]
+      Globalize.locale = I18n.locale
     end
 
+    def current_budget
+      Budget.current
+    end
+
+    def clear_password
+      session[:new_password] = nil
+    end
 end

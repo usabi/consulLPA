@@ -7,7 +7,7 @@ class Admin::StatsController
     @visits = Visit.count
     @debates = Debate.with_hidden.count
     @proposals = Proposal.with_hidden.count
-    @comments = Comment.with_hidden.count
+    @comments = Comment.not_valuations.with_hidden.count
 
     @debate_votes = Vote.where(votable_type: 'Debate').count
     @proposal_votes = Vote.where(votable_type: 'Proposal').count
