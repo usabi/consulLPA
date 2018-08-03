@@ -55,7 +55,7 @@ gem 'whenever', '~> 0.10.0', require: false
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors', '~> 0.2.1'
 
-source 'http://rails-assets.org' do
+source 'https://rails-assets.org' do
   gem 'rails-assets-leaflet'
   gem 'rails-assets-markdown-it', '~> 8.2.1'
 end
