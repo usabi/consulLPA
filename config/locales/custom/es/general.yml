@@ -231,7 +231,7 @@ es:
       logo_town_hall: 'Logo Ayuntamiento de LPGC'
       external_link_town_hall: http://www.laspalmasgc.es/
       logo_oficina_participacion: 'Logo Oficina de Participación LPGC'
-      external_link_oficina_participacion: http://www.laspalmasgc.es/es/areas-tematicas/participacion-ciudadana/equipos-territoriales/ 
+      external_link_oficina_participacion: http://www.laspalmasgc.es/es/areas-tematicas/participacion-ciudadana/equipos-territoriales/
       management: Gestión
       moderation: Moderar
       valuation: Evaluación
@@ -783,7 +783,7 @@ es:
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: ¿Tienes ya una cuenta en %{org_name}?
+      question: ¿Tienes ya una cuenta en %{org}?
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ver propuestas

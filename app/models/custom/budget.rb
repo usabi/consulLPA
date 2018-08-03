@@ -11,10 +11,23 @@ class Budget
     case phase
     when 'accepting', 'reviewing'
       %w{random}
-    when 'balloting', 'reviewing_ballots'
+    when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{price}
     else
       %w{random confidence_score}
+    end
+  end
+
+  private
+
+  def sanitize_descriptions
+    s = WYSIWYGSanitizer.new
+    WYSIWYGSanitizer::ALLOWED_TAGS += ['a', 'img']
+    WYSIWYGSanitizer::ALLOWED_ATTRIBUTES += ['href', 'target']
+
+    PHASES.each do |phase|
+      sanitized = s.sanitize(send("description_#{phase}"))
+      send("description_#{phase}=", sanitized)
     end
   end
 

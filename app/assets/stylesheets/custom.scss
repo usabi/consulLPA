@@ -276,6 +276,19 @@ body.home-page main {
   }
 }
 
+header .top-bar, .menu.float-right {
+  display: block;
+}
+
+.home-page .push {
+  display: none;
+}
+
+.top-bar .menu > li {
+  display: table-cell;
+  height: 5.25rem;
+  vertical-align: middle;
+}
 
 @media screen and (min-width: 640px) {
   .help-header > .row > .small-12, .activity > .column > h2, .account > .column > img, .jumbo.light > .row >.column > h2, .margin-top > .column > h1, .margin-top > div > h1 {

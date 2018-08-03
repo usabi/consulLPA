@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.8.2'
+lock '~> 3.10.1'
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
@@ -49,7 +49,7 @@ namespace :deploy do
   after :published, 'delayed_job:restart'
   # after :published, 'refresh_sitemap'
   after :publishing, 'restart_tmp'
-  
+
   after :finishing, 'deploy:cleanup'
 end
 
@@ -83,4 +83,3 @@ task :restart_tmp do
   execute "touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
   end
 end
-
