@@ -21,6 +21,7 @@ es:
         no_ballots_allowed: El periodo de votación está cerrado.
         different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
         change_ballot: cambiar tus votos
+        not_minimum_voting_age: Debe ser mayor de 18 años para poder votar
     groups:
       show:
         title: Selecciona una opción
@@ -29,19 +30,31 @@ es:
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
     phase:
-      accepting: Evaluación de proyectos
-      reviewing: Revisión interna de proyectos
+      drafting: Borrador (No visible para el público)
+      informing: Información
+      accepting: Presentación de proyectos
+      reviewing: Revisión inicial de proyectos
       selecting: Fase de apoyos
       valuating: Evaluación de proyectos
+      publishing_prices: Revisión de costes
       balloting: Votación final
       reviewing_ballots: Votación finalizada
       finished: Resultados
     index:
       title: Presupuestos participativos
+      empty_budgets: No hay presupuestos participativos.
       section_header:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
         help: Ayuda sobre presupuestos participativos
+        all_phases: Ver todas las fases
+      all_phases: Fases de los presupuestos participativos
+      map: Proyectos localizables geográficamente
+      investment_proyects: Ver lista completa de proyectos de gasto
+      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
+      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+      finished_budgets: Presupuestos participativos terminados
+      see_results: Ver resultados
       section_footer:
         title: Ayuda sobre presupuestos participativos
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal.
