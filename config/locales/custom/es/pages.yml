@@ -24,12 +24,12 @@ es:
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
-        title: "Propuestas"
-        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya propuestas de otras personas."
+        title: "Iniciativas Ciudadanas"
+        description: "Propón lo que quieres que el Ayuntamiento lleve a cabo y apoya iniciativas de otras personas."
         feature_1: "Para crear una propuesta tienes que %{link}, además para apoyarlas debes verificar tu cuenta."
         feature_1_link: "registrarte en %{org}"
         feature_2_html: "Las propuestas que consigan <strong>el apoyo del 1% de las personas</strong> mayores de %{minimum_age} años empadronadas en Las Palmas de Gran Canaria, después serán valoradas por el personal técnico del ayuntamiento y pasarán a votación por la ciudadanía."
-        feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la propuesta y se hace</strong>."
+        feature_3_html: "Si hay más gente a favor que en contra en la votación, <strong>el Ayuntamiento asume la iniciativa y se hace</strong>."
         image_alt: "Botón para apoyar una propuesta"
         figcaption_html: 'Botón para "Apoyar" una propuesta.<br>Cuando alcance el número de apoyos pasará a votación.'
       budgets:

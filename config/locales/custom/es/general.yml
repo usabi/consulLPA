@@ -248,9 +248,10 @@ es:
       open_city_slogan_html: Ahora podemos opinar, <strong>debatir</strong>, <strong>proponer</strong> ideas para mejorar nuestra ciudad y <strong>decidir</strong> qué hacemos
       open_city_title_html: <strong>Ahora decides tú</strong>
       open_gov: Gobierno %{open}
-      proposals: Propuestas
+      proposals: Iniciativas ciudadanas
       poll_questions: Consultas
       budgets: Presupuestos participativos
+      budgets_help: Por favor, tenga en cuenta que debe crear una propuesta de inversión para cada acción particular que desea realizar. Si desea proponer dos ideas independientes debe crear dos proyectos.
       spending_proposals: "Propuestas de inversión"
       register: Regístrate
     admin:
@@ -381,12 +382,12 @@ es:
       select_order: Ordenar por
       select_order_long: Estas viendo las propuestas
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
+      title: Iniciativas ciudadanas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
         icon_alt: Icono de Propuestas
-        title: Propuestas
+        title: Iniciativas Ciudadanas
         help: Ayuda sobre las propuestas
       section_footer:
         title: Ayuda sobre las propuestas
