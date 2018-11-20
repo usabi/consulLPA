@@ -11,4 +11,12 @@ class Valuation::BudgetInvestmentsController
 
       @investment.errors.empty?
     end
+
+    private
+      def restrict_access
+        unless current_user.administrator? || current_budget.valuating? || current_budget.accepting?
+          raise CanCan::AccessDenied.new(I18n.t('valuation.budget_investments.not_in_valuating_phase'))
+        end
+      end
+
 end
