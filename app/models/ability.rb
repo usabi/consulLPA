@@ -15,7 +15,6 @@ class Ability
         merge Abilities::Moderator.new(user)
       else
         merge Abilities::Common.new(user)
-        cannot :create, Proposal
       end
     else
       merge Abilities::Everyone.new(user)
