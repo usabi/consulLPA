@@ -22,9 +22,9 @@ es:
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
       hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}.'
+      new_html: 'Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso o para el próximo que se cree.'
       new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
+      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
@@ -34,7 +34,7 @@ es:
       hi: "Estimado usuario,"
       new_html: 'Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}.'
       new_href: "nuevo proyecto de gasto"
-      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, al correo example@consul.es, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
+      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
       sincerely: "Atentamente"
       signatory: "DIRECCIÓN GENERAL DE PARTICIPACIÓN CIUDADANA"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
