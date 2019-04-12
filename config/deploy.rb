@@ -13,7 +13,7 @@ set :application, 'consul'
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
-set :repo_url, 'https://github.com/usabi/consulLPA.git'
+set :repo_url, 'https://github.com/LauraConcepcion/consulLPA.git'
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
 
@@ -41,8 +41,9 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  before :starting, 'rvm1:install:rvm', 'update_rvm_key'  # install/update RVM
-  before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  # RVM is already installed on server, so these lines are not needed
+  # before :starting, 'rvm1:install:rvm', 'update_rvm_key'  # install/update RVM
+  # before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
   before :starting, 'install_bundler_gem' # install bundler gem
 
   # after :publishing, 'deploy:restart'
@@ -53,11 +54,12 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-task :update_rvm_key do
-  on roles(:app) do
-    execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
-  end
-end
+# RVM is already installed on server, so these lines are not needed
+# task :update_rvm_key do
+#   on roles(:app) do
+#     execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+#   end
+# end
 
 
 task :install_bundler_gem do
