@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/unicorn.rb config/environments/production.rb}
 set :linked_dirs, %w{log tmp public/system public/assets}
 
 set :keep_releases, 5
@@ -41,9 +41,9 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  # RVM is already installed on server, so these lines are not needed
-  # before :starting, 'rvm1:install:rvm', 'update_rvm_key'  # install/update RVM
-  # before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  #before :starting, 'rvm1:install:rvm'  # install/update RVM
+  #before :starting, 'rvm1:install:ruby' # install Ruby and create gemset
+  #before :starting, 'install_bundler_gem' # install bundler gem
   before :starting, 'install_bundler_gem' # install bundler gem
 
   # after :publishing, 'deploy:restart'

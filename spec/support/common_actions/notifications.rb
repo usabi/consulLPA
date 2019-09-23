@@ -10,7 +10,7 @@ module Notifications
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.parameterize('_').to_sym}_#{resource.id}"
+    "comment-body-#{resource.class.name.parameterize("_").to_sym}_#{resource.id}"
   end
 
   def create_proposal_notification(proposal)
@@ -23,8 +23,8 @@ module Notifications
       click_link "Send notification"
     end
 
-    fill_in 'proposal_notification_title', with: "Thanks for supporting proposal: #{proposal.title}"
-    fill_in 'proposal_notification_body', with: "Please share it with others! #{proposal.summary}"
+    fill_in "proposal_notification_title", with: "Thanks for supporting proposal: #{proposal.title}"
+    fill_in "proposal_notification_body", with: "Please share it with others! #{proposal.summary}"
     click_button "Send message"
 
     expect(page).to have_content "Your message has been sent correctly."
@@ -32,25 +32,19 @@ module Notifications
   end
 
   def path_for(resource)
-    nested_path_for(resource) || url_for([resource, only_path: true])
-  end
-
-  def nested_path_for(resource)
-    case resource.class.name
-    when "Legislation::Question"
-      legislation_process_question_path(resource.process, resource)
-    when "Legislation::Proposal"
-      legislation_process_proposal_path(resource.process, resource)
-    when "Budget::Investment"
-      budget_investment_path(resource.budget, resource)
-    else
-      false
-    end
+    polymorphic_hierarchy_path(resource)
   end
 
   def error_message(resource_model = nil)
     resource_model ||= "(.*)"
-    field_check_message = 'Please check the marked fields to know how to correct them:'
+    field_check_message = "Please check the marked fields to know how to correct them:"
     /\d errors? prevented this #{resource_model} from being saved. #{field_check_message}/
+  end
+
+  def fill_in_admin_notification_form(options = {})
+    select (options[:segment_recipient] || "All users"), from: :admin_notification_segment_recipient
+    fill_in "Title", with: (options[:title] || "This is the notification title")
+    fill_in "Text", with: (options[:body] || "This is the notification body")
+    fill_in :admin_notification_link, with: (options[:link] || "https://www.decide.madrid.es/vota")
   end
 end

@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include ImageAttributes
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -44,8 +45,7 @@ class ProposalsController < ApplicationController
   def index_customization
     discard_archived
     load_retired
-    load_successful_proposals
-    load_featured unless @proposal_successful_exists
+    load_featured
   end
 
   def vote
@@ -62,12 +62,6 @@ class ProposalsController < ApplicationController
   end
 
   def retire_form
-  end
-
-  def share
-    if Setting['proposal_improvement_path'].present?
-      @proposal_improvement_path = Setting['proposal_improvement_path']
-    end
   end
 
   def vote_featured
@@ -93,7 +87,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :question, :summary, :description, :external_url, :video_url,
                                        :responsible_name, :tag_list, :terms_of_service, :geozone_id, :skip_map,
-                                       image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                                       image_attributes: image_attributes,
                                        documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                                        map_location_attributes: [:latitude, :longitude, :zoom])
     end
@@ -131,19 +125,18 @@ class ProposalsController < ApplicationController
 
     def load_featured
       return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank? && @current_order != "recommendations"
-      @featured_proposals = Proposal.not_archived.sort_by_confidence_score.limit(3)
-      if @featured_proposals.present?
-        set_featured_proposal_votes(@featured_proposals)
-        @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+      if Setting['feature.featured_proposals']
+        @featured_proposals = Proposal.not_archived.unsuccessful
+                              .sort_by_confidence_score.limit(Setting['featured_proposals_number'])
+        if @featured_proposals.present?
+          set_featured_proposal_votes(@featured_proposals)
+          @resources = @resources.where('proposals.id NOT IN (?)', @featured_proposals.map(&:id))
+        end
       end
     end
 
     def set_view
       @view = (params[:view] == "minimal") ? "minimal" : "default"
-    end
-
-    def load_successful_proposals
-      @proposal_successful_exists = Proposal.successful.exists?
     end
 
     def destroy_map_location_association

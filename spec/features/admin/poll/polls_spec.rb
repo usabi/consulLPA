@@ -7,6 +7,11 @@ feature 'Admin polls' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "poll",
+                  "edit_admin_poll_path",
+                  %w[name summary description]
+
   scenario 'Index empty', :js do
     visit admin_root_path
 
@@ -18,16 +23,19 @@ feature 'Admin polls' do
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index', :js do
-    3.times { create(:poll) }
+  scenario "Index show polls list order by starts at date", :js do
+    poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
+    poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
+    poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
 
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
+    within("#polls_menu") do
       click_link "Polls"
     end
 
+    expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
     polls = Poll.all
@@ -36,6 +44,9 @@ feature 'Admin polls' do
         expect(page).to have_content poll.name
       end
     end
+
+    expect(poll_3.name).to appear_before(poll_1.name)
+    expect(poll_1.name).to appear_before(poll_2.name)
     expect(page).not_to have_content "There are no polls"
   end
 
@@ -55,13 +66,11 @@ feature 'Admin polls' do
     start_date = 1.week.from_now
     end_date = 2.weeks.from_now
 
-    fill_in "poll_name", with: "Upcoming poll"
+    fill_in "Name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
-    fill_in 'poll_starts_at_hour', with: start_date.strftime("%H:%M")
-    fill_in 'poll_ends_at_hour', with: end_date.strftime("%H:%M")
-    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
-    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+    fill_in 'Summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'Description', with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
@@ -85,7 +94,7 @@ feature 'Admin polls' do
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
-    fill_in "poll_name", with: "Next Poll"
+    fill_in "Name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at_hour', with: end_date.strftime("%H:%M")
     check 'poll_results_enabled'

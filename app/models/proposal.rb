@@ -20,6 +20,8 @@ class Proposal < ActiveRecord::Base
                accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
+  include Milestoneable
+  include Randomizable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -57,7 +59,6 @@ class Proposal < ActiveRecord::Base
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_archival_date,    -> { archived.sort_by_confidence_score }
@@ -166,14 +167,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               total_votes,
-                                               total_votes,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
@@ -205,7 +203,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def users_to_notify
-    (voters + followers).uniq
+    (voters + followers).uniq - [author]
   end
 
   def self.proposals_orders(user)
