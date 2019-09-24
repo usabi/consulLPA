@@ -4,8 +4,7 @@ class Admin::BudgetInvestmentsController
     params.require(:budget_investment)
           .permit(:title, :description, :external_url, :heading_id, :administrator_id,
                   :tag_list, :valuation_tag_list, :incompatible, :organization_name,
-                  :selected, valuator_ids: [],
-                  :location, valuator_group_ids: []
+                  :selected, :location, valuator_ids: [], valuator_group_ids: []
                   )
   end
 end
