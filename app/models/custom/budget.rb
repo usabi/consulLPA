@@ -13,6 +13,8 @@ class Budget
       %w{random}
     when 'publishing_prices', 'balloting', 'reviewing_ballots'
       %w{price}
+    when 'finished'
+      %w{random}
     else
       %w{random confidence_score}
     end
