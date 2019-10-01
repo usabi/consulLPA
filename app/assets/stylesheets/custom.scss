@@ -29,6 +29,10 @@ header{
     }
     .top-bar-right{
       width: 100%;
+      li.has-submenu.is-active a {
+        color: #00247e!important;
+        font-weight: normal;
+      }
     }
   }
   .subnavigation{

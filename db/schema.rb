@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "active_poll_translations", force: :cascade do |t|
     t.integer  "active_poll_id", null: false
