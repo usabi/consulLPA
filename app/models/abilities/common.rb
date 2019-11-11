@@ -47,6 +47,9 @@ module Abilities
       can [:flag, :unflag], Legislation::Proposal
       cannot [:flag, :unflag], Legislation::Proposal, author_id: user.id
 
+      can [:flag, :unflag], Budget::Investment
+      cannot [:flag, :unflag], Budget::Investment, author_id: user.id
+
       can [:create, :destroy], Follow
 
       can [:destroy], Document, documentable: { author_id: user.id }
@@ -89,9 +92,6 @@ module Abilities
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
-
-      can :create, Annotation
-      can [:update, :destroy], Annotation, user_id: user.id
 
       can [:create], Topic
       can [:update, :destroy], Topic, author_id: user.id

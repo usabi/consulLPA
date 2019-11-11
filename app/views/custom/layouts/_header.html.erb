@@ -1,5 +1,4 @@
 <header>
-
   <div class="top-links hide-for-small-only">
     <div class="row">
       <div class="float-right social">
@@ -10,53 +9,53 @@
       </div>
     </div>
   </div>
-
   <div class="top-bar row">
+    <div class="top-bar">
+      <%= link_to root_path, class: "logo show-for-small-only" do %>
+        <%= image_tag(image_path_for('logo_header.png'), alt: t("layouts.header.logo")) %>
+      <% end %>
 
-    <%= link_to root_path, class: "logo show-for-small-only" do %>
-      <%= image_tag(image_path_for('logo_header.png'), alt: t("layouts.header.logo")) %>
-    <% end %>
-
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
-      <span class="menu-icon dark" data-toggle></span>
-    </span>
-
-    <div id="responsive-menu">
-      <div class="top-bar-title medium-2 hide-for-small-only">
-        <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
-          <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only', alt: t("layouts.header.logo")) %>
-        <% end %>
-      </div>
-      <div class="medium-7 column">
-        <div class="medium-9 small-12 column ">
-          <div class="top-bar-right">
-            <ul class="menu float-right">
-              <%= render "shared/admin_login_items" %>
-              <%= render "layouts/notification_item" %>
-              <%= render "devise/menu/login_items" %>
-            </ul>
-          </div>
-        </div>
-        <div class="medium-3 column margin-small">
-          <%= link_to t("layouts.header.external_link_town_hall"), target: '_blank', class: "hide-for-small-only" do %>
-            <%= image_tag(image_path_for('logo_lpa.jpg'), alt: t("layouts.header.logo_town_hall")) %>
+      <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+        <span class="menu-icon dark" data-toggle></span>
+      </span>
+      <div id="responsive-menu">
+        <div class="top-bar-title medium-2 hide-for-small-only">
+          <%= link_to root_path, class: "hide-for-small-only", accesskey: "0" do %>
+            <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only', alt: t("layouts.header.logo")) %>
           <% end %>
-          <div class="show-for-small-only row">
-            <div class="subnavigation row">
-              <%= render "shared/subnavigation" %>
+        </div>
+        <div class="medium-7 column">
+          <div class="medium-9 small-12 column ">
+            <div class="top-bar-right">
+              <ul class="menu float-right" data-responsive-menu="medium-dropdown">
+                <%= render "shared/admin_login_items" %>
+                <%= render "layouts/notification_item" %>
+                <%= render "devise/menu/login_items" %>
+              </ul>
+            </div>
+          </div>
+          <div class="medium-3 column margin-small">
+            <%= link_to t("layouts.header.external_link_town_hall"), target: '_blank', class: "hide-for-small-only" do %>
+              <%= image_tag(image_path_for('logo_lpa.jpg'), alt: t("layouts.header.logo_town_hall")) %>
+            <% end %>
+            <div class="show-for-small-only row">
+              <div class="subnavigation row">
+                <%= render "shared/subnavigation" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="subnavigation expanded">
+  <div id="navigation_bar" class="subnavigation expanded">
     <div class="row">
       <div class="hide-for-small-only">
         <%= render "shared/subnavigation" %>
       </div>
+      <div class="small-12 medium-3 column">
+        <%= yield :header_addon %>
+      </div>
     </div>
   </div>
-
 </header>

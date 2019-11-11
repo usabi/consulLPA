@@ -1,15 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Residence' do
+feature "Residence", :with_frozen_time do
   let(:officer) { create(:poll_officer) }
-
-  background do
-    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
-  end
-
-  after do
-    travel_back
-  end
 
   feature "Officers without assignments" do
 
@@ -42,13 +34,13 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678Z"
-      fill_in 'residence_year_of_birth', with: '1980'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "12345678Z"
+      fill_in "residence_year_of_birth", with: "1980"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'Document verified with Census'
+      expect(page).to have_content "Document verified with Census"
     end
 
     scenario "Error on verify" do
@@ -69,13 +61,13 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "9999999A"
-      fill_in 'residence_year_of_birth', with: '1980'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "9999999A"
+      fill_in "residence_year_of_birth", with: "1980"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'The Census was unable to verify this document'
+      expect(page).to have_content "The Census was unable to verify this document"
 
       officer.reload
       fcc = FailedCensusCall.last
@@ -90,13 +82,13 @@ feature 'Residence' do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678Z"
-      fill_in 'residence_year_of_birth', with: '1981'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "12345678Z"
+      fill_in "residence_year_of_birth", with: "1981"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'The Census was unable to verify this document'
+      expect(page).to have_content "The Census was unable to verify this document"
     end
 
   end

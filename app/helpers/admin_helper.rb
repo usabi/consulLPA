@@ -1,7 +1,11 @@
 module AdminHelper
 
   def side_menu
-    render "/#{namespace}/menu"
+    if namespace == 'moderation/budgets'
+      render "/moderation/menu"
+    else
+      render "/#{namespace}/menu"
+    end
   end
 
   def namespaced_root_path
@@ -9,23 +13,40 @@ module AdminHelper
   end
 
   def namespaced_header_title
-    t("#{namespace}.header.title")
+    if namespace == 'moderation/budgets'
+      t("moderation.header.title")
+    else
+      t("#{namespace}.header.title")
+    end
   end
 
   def menu_moderated_content?
-    ["proposals", "debates", "comments", "hidden_users", "activity"].include?(controller_name) && controller.class.parent != Admin::Legislation
+    moderated_sections.include?(controller_name) && controller.class.parent != Admin::Legislation
+  end
+
+  def moderated_sections
+    ["hidden_proposals", "debates", "comments", "hidden_users", "activity",
+     "hidden_budget_investments"]
+  end
+
+  def menu_budgets?
+    controller_name.starts_with?("budget")
   end
 
   def menu_budget?
     ["spending_proposals"].include?(controller_name)
   end
 
+  def menu_poll?
+    %w[polls active_polls recounts results].include?(controller_name)
+  end
+
   def menu_polls?
-    %w[polls questions answers].include?(controller_name)
+    menu_poll? || %w[questions answers].include?(controller_name)
   end
 
   def menu_booths?
-    %w[officers booths officer_assignments booth_assignments recounts results shifts].include?(controller_name)
+    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name)
   end
 
   def menu_profiles?
@@ -37,11 +58,16 @@ module AdminHelper
   end
 
   def menu_customization?
-    ["pages", "banners"].include?(controller_name) || menu_homepage?
+    ["pages", "banners", "information_texts"].include?(controller_name) ||
+    menu_homepage? || menu_pages?
   end
 
   def menu_homepage?
-    ["homepage", "cards"].include?(controller_name)
+    ["homepage", "cards"].include?(controller_name) && params[:page_id].nil?
+  end
+
+  def menu_pages?
+    ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
   def official_level_options
@@ -76,14 +102,10 @@ module AdminHelper
     user_roles(user).join(", ")
   end
 
-  def display_budget_goup_form(group)
-    group.errors.messages.size > 0 ? "" : "display:none"
-  end
-
   private
 
     def namespace
-      controller.class.parent.name.downcase.gsub("::", "/")
+      controller.class.name.downcase.split("::").first
     end
 
 end

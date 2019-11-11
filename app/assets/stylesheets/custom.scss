@@ -29,6 +29,30 @@ header{
     }
     .top-bar-right{
       width: 100%;
+      li.has-submenu {
+        position: relative;
+        > a:after {
+          display: block;
+          width: 0;
+          height: 0;
+          border: inset 6px;
+          content: '';
+          border-bottom-width: 0;
+          border-top-style: solid;
+          border-color: #00247e transparent transparent;
+          right: 5px;
+          left: auto;
+          margin-top: -3px;
+        }
+        &.is-active a {
+          color: #00247e!important;
+          font-weight: normal;
+        }
+        .submenu a {
+          margin-right: 0;
+          width: 100%;
+        }
+      }
     }
   }
   .subnavigation{

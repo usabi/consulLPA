@@ -27,6 +27,10 @@ every 1.day, at: '5:00 am' do
   rake "-s sitemap:refresh"
 end
 
+every 1.day, at: '3:00 am', roles: [:cron] do
+  rake "votes:reset_hot_score"
+end
+
 every :reboot do
   command "cd /home/usabi/consul/current && RAILS_ENV=production bin/delayed_job start -n 2"
 end

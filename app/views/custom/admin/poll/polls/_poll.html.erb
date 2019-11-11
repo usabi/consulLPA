@@ -5,7 +5,10 @@
     </strong>
   </td>
   <td>
-    <%= l poll.starts_at.to_date %> <%= poll.starts_at.strftime("%H:%M") %> - <%= l poll.ends_at.to_date %> <%= poll.ends_at.strftime("%H:%M") %>
+    <%= l poll.starts_at.to_date %> <%= poll.starts_at.strftime("%H:%M") %>
+  </td>
+  <td>
+    <%= l poll.ends_at.to_date %> <%= poll.ends_at.strftime("%H:%M") %>
   </td>
   <td class="text-right">
     <%= link_to t("admin.actions.edit"),

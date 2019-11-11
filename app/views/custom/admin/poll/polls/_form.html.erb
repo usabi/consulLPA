@@ -1,9 +1,7 @@
-<%= form_for [:admin, @poll] do |f| %>
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :name %>
-    </div>
-  </div>
+<%= render "admin/shared/globalize_locales", resource: @poll %>
+
+<%= translatable_form_for [:admin, @poll] do |f| %>
+  <%= render "shared/errors", resource: @poll %>
 
   <div class="row">
     <div class="small-12 medium-3 column">
@@ -29,17 +27,25 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%=f.text_area :summary, rows: 4%>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
+        <%= translations_form.text_field :name %>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%=f.text_area :description, rows: 8%>
+    <div class="row">
+      <div class="small-12 column">
+        <%= translations_form.text_area :summary, rows: 4%>
+      </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="small-12 column">
+        <%= translations_form.text_area :description, rows: 8%>
+      </div>
+    </div>
+  <% end %>
 
   <div class="row">
     <div class="small-12 column">
@@ -53,7 +59,7 @@
     </div>
   </div>
 
-  <div id="geozones" style="<%= @poll.geozone_restricted? ? '' : 'display:none' %>">
+  <div id="geozones" style="<%= @poll.geozone_restricted? ? "" : "display:none" %>">
     <div class="row">
       <%= f.collection_check_boxes(:geozone_ids, @geozones, :id, :name) do |b| %>
         <div class="small-6 medium-3 column">
@@ -65,21 +71,10 @@
     </div>
   </div>
 
-  <% if controller_name == "polls" && action_name == "edit" %>
-    <div class="row">
-      <fieldset class="fieldset">
-        <legend><%= t('admin.polls.new.show_results_and_stats') %></legend>
-        <%= f.check_box :results_enabled, checked: @poll.results_enabled?, label: t('admin.polls.new.show_results') %>
-        <%= f.check_box :stats_enabled, checked: @poll.stats_enabled?, label: t('admin.polls.new.show_stats') %>
-        <p class="small"><%= t('admin.polls.new.results_and_stats_reminder') %></p>
-      </fieldset>
-    </div>
-  <% end %>
-
   <div class="row">
     <div class="small-12 medium-4 column">
       <%= f.submit t("admin.polls.#{admin_submit_action(@poll)}.submit_button"),
-                   class: "button success expanded" %>
+                   class: "button success expanded margin-top" %>
     </div>
   </div>
 <% end %>
