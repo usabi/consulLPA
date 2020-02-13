@@ -38,6 +38,15 @@
   <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
 </td>
 <td class="small text-center">
+  <%= investment.author_phone %>
+</td>
+<td class="small text-center">
+  <%= l investment.created_at, format: :datetime %>
+</td>
+<td class="small text-center">
+  <%= l investment.updated_at, format: :datetime %>
+</td>
+<td class="small text-center">
   <%= form_for [:admin, investment.budget, investment], remote: true do |f| %>
       <%= f.check_box :visible_to_valuators,
                       label: false,

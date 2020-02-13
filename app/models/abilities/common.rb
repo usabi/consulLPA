@@ -29,6 +29,7 @@ module Abilities
       can :create, Proposal
       can :create, Legislation::Proposal
       can :create, Budget::Investment,               budget: { phase: "accepting" }
+      can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
 
       can :suggest, Debate
       can :suggest, Proposal

@@ -187,6 +187,23 @@ es:
           undecided: "Sin decidir"
         selected: "Seleccionada"
         select: "Seleccionar"
+        list:
+          id: ID
+          title: Título
+          supports: Apoyos
+          admin: Administrador
+          valuator: Evaluador
+          valuation_group: Grupos evaluadores
+          geozone: Ámbito de actuación
+          feasibility: Viabilidad
+          valuation_finished: Ev. Fin.
+          selected: Seleccionado
+          visible_to_valuators: Mostrar a evaluadores
+          author_username: Usuario autor
+          incompatible: Incompatible
+          author_phone: "Tlf. autor"
+          created_at: Creada
+          updated_at: Actualizada
         table_id: "ID"
         table_title: "Título"
         table_supports: "Apoyos"
