@@ -50,9 +50,9 @@ es:
         all_phases: Ver todas las fases
       all_phases: Fases de los presupuestos participativos
       map: Proyectos localizables geográficamente
-      investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
-      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
+      investment_proyects: Ver lista completa de propuestas de gasto
+      unfeasible_investment_proyects: Ver lista de propuestas de gasto inviables
+      not_selected_investment_proyects: Ver lista de propuestas de gasto no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:

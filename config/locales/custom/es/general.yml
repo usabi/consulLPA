@@ -708,6 +708,11 @@ es:
       deleted_debate: Este debate ha sido eliminado
       deleted_proposal: Esta propuesta ha sido eliminada
       deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
+      proposals: Propuestas
+      debates: Debates
+      budget_investments: Propuestas de presupuestos participativos
+      comments: Comentarios
+      actions: Acciones
       filters:
         comments:
           one: 1 Comentario
@@ -719,8 +724,8 @@ es:
           one: 1 Propuesta
           other: "%{count} Propuestas"
         budget_investments:
-          one: 1 Proyecto de presupuestos participativos
-          other: "%{count} Proyectos de presupuestos participativos"
+          one: 1 Propuesta de presupuestos participativos
+          other: "%{count} Propuestas de presupuestos participativos"
         follows:
           one: 1 Siguiendo
           other: "%{count} Siguiendo"

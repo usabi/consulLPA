@@ -8,8 +8,8 @@ es:
         one: "Presupuesto participativo"
         other: "Presupuestos participativos"
       budget/investment:
-        one: "Proyecto de gasto"
-        other: "Proyectos de gasto"
+        one: "Propuesta de gasto"
+        other: "Propuestas de gasto"
       milestone:
         one: "hito"
         other: "hitos"
@@ -66,7 +66,7 @@ es:
         other: "Propuestas ciudadanas"
       spending_proposal:
         one: "Propuesta de inversión"
-        other: "Proyectos de gasto"
+        other: "Propuestas de inversión"
       site_customization/page:
         one: Página
         other: Páginas
@@ -129,7 +129,7 @@ es:
         administrator_id: "Administrador"
         location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
-        image: "Imagen descriptiva del proyecto de gasto"
+        image: "Imagen descriptiva de la propuesta de gasto"
         image_title: "Título de la imagen"
         author_phone: "Teléfono de contacto"
       milestone:
@@ -206,7 +206,7 @@ es:
         title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
-        signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
+        signable_id: "ID Propuesta ciudadana/Propuesta de gasto"
         document_numbers: "Números de documentos"
       site_customization/page:
         content: Contenido
