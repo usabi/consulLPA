@@ -24,8 +24,6 @@ class Budget
 
   def sanitize_descriptions
     s = WYSIWYGSanitizer.new
-    WYSIWYGSanitizer::ALLOWED_TAGS += ['a', 'img']
-    WYSIWYGSanitizer::ALLOWED_ATTRIBUTES += ['href', 'target']
 
     Budget::Phase::PHASE_KINDS.each do |phase|
       sanitized = s.sanitize(send("description_#{phase}"))

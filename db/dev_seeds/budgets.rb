@@ -135,7 +135,8 @@ section "Creating Investments" do
       tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
       skip_map: "1",
-      terms_of_service: "1"
+      terms_of_service: "1",
+      author_phone: "928222222"
     )
 
     add_image_to(investment) if Random.rand > 0.5
@@ -182,7 +183,8 @@ section "Winner Investments" do
       selected: true,
       price: rand(10000..heading.price),
       skip_map: "1",
-      terms_of_service: "1"
+      terms_of_service: "1",
+      author_phone: "928222222"
     )
     add_image_to(investment) if Random.rand > 0.3
   end
