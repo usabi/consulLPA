@@ -36,11 +36,84 @@ es:
         title: "Presupuestos participativos"
         description: "Decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto municipal."
         description_2: "La elaboración de los presupuestos participativos se realiza en varias fases:"
-        phase_1_html: "La ciudadanía presenta sus propuestas"
-        phase_2_html: "Los servicios municipales evalúan la viabilidad económica y jurídica de las propuestas"
-        phase_3_html: "El Consejo Social presenta el informe-proposición sobre la viabilidad de las propuestas"
-        phase_4_html: "Los ciudadanos votan para decidir las propuestas que se incluirán finalmente en los presupuestos
-"
+        phase_1_html: "
+        <p><strong>PRESENTACIÓN DE PROPUESTAS</strong></p>
+<ol>
+<li><strong>Propuestas para los distritos</strong></li>
+</ol>
+<p>Como norma general deber&aacute;n circunscribirse al &aacute;mbito territorial de cada distrito, ser de competencia municipal y titularidad, en caso de tratarse de propuestas sobre elementos del inmovilizado, tambi&eacute;n municipal.</p>
+<p>Las propuestas podr&aacute;n referirse tanto a gastos corrientes, como a inversiones, de dicho presupuesto municipal.</p>
+<p>A modo de ejemplo de propuestas referidas a gastos, cabe realizar propuestas sobre:</p>
+<ul>
+<li>Reparaciones, mantenimiento y conservaci&oacute;n de v&iacute;as p&uacute;blicas, alumbrado p&uacute;blico, parques y jardines, centros c&iacute;vicos y locales sociales, etc.</li>
+<li>Gastos por eventos, actividades culturales, jornadas, cursos, talleres, etc.</li>
+</ul>
+<p>Para la aceptaci&oacute;n de propuestas referidas a gastos corrientes se requerir&aacute; que no sean incompatibles con cualquier contrato existente relacionado con las mismas.</p>
+<p>A modo de ejemplo de propuestas de inversiones:</p>
+<ul>
+<li>Adquisiciones de terrenos, edificios, maquinaria, instalaciones, elementos de transporte, mobiliario y equipos inform&aacute;ticos para centros c&iacute;vicos y locales sociales etc.</li>
+<li>Inversi&oacute;n en nuevas infraestructuras: urbanizaci&oacute;n, v&iacute;as p&uacute;blicas, parques y jardines, mobiliario urbano, alumbrado, alcantarillado, etc.</li>
+<li>Construcci&oacute;n de instalaciones deportivas</li>
+<li>Inversi&oacute;n en edificios para escuelas infantiles, escuelas de m&uacute;sica, centros de atenci&oacute;n a personas sin hogar, centros de servicios sociales, bibliotecas, centros c&iacute;vicos y locales sociales, etc.</li>
+<li>Obras de rehabilitaci&oacute;n de edificios y viviendas de titularidad municipal.&nbsp;</li>
+</ul>
+<ol>
+<li><strong>Propuestas para la ciudad</strong></li>
+</ol>
+<p>Deber&aacute;n referirse a inversiones reales, del Presupuesto de Gastos del Ayuntamiento.</p>
+<p>Las propuestas ciudad deber&aacute;n reunir una o varias de las siguientes caracter&iacute;sticas:</p>
+<ul>
+<li>Estar localizadas o afectar a varios distritos de la ciudad.</li>
+<li>Tratarse de inversiones relevantes para la ciudad con independencia del distrito d&oacute;nde est&eacute;n ubicadas.</li>
+<li>Tratarse de inversiones que afectan a sectores determinados de la poblaci&oacute;n con independencia del distrito en que est&eacute;n ubicadas.</li>
+</ul>
+<p><strong>PRESENTACI&Oacute;N DE PROPUESTAS</strong></p>
+<p>La fase de presentaci&oacute;n de propuestas ser&aacute; de<strong> 17 febrero al 17 de marzo.</strong></p>
+<p>Podr&aacute;n presentar propuestas:</p>
+<ul>
+<li>Cualquier ciudadano/a mayor de diecis&eacute;is a&ntilde;os.</li>
+<li>Cualquier entidad con personalidad jur&iacute;dica (asociaciones, fundaciones, ONGs, sociedades mercantiles, etc.).</li>
+<li>Universidad de Las Palmas de Gran Canaria.</li>
+<li>Sindicatos, asociaciones empresariales y Colegios profesionales.</li>
+<li>CEIPS, IES y Ampas.</li>
+</ul>
+<p>Se presentar&aacute; una propuesta en cada ficha. Las propuestas se presentar&aacute;n a trav&eacute;s de la plataforma digital <a href=\"http://www.lpgcdecide.es\">www.lpgcdecide.es</a>, que contar&aacute; con apartados diferenciados para las propuestas de distrito y para las de ciudad. Se deber&aacute;n incluir los siguientes datos:</p>
+<ul>
+<li>Entidad o persona que presenta la propuesta, con tel&eacute;fono de contacto.</li>
+<li>T&iacute;tulo descriptivo de la propuesta.</li>
+<li>Descripci&oacute;n de la propuesta con la mayor descripci&oacute;n y claridad posible.</li>
+<li>Objetivos que se propone con la propuesta. Especificar para qu&eacute; se propone y qu&eacute; se propone alcanzar.</li>
+<li>Ubicaci&oacute;n de la propuesta con el mayor detalle posible (barrio o barrios, calle o calles, etc.).</li>
+<li>Destinatarios de la propuesta. Personas o colectivos beneficiarias potenciales de la propuesta. Especificar a qui&eacute;nes va dirigida y a qui&eacute;nes se pretende favorecer.</li>
+<li>Cualquier informaci&oacute;n u observaci&oacute;n que se considere de inter&eacute;s.</li>
+<li>Se podr&aacute;n adjuntar fotos, planos, etc.</li>
+</ul>
+<p>No es necesario que en la propuesta se incluya el cap&iacute;tulo del Presupuesto Municipal.</p>"
+
+
+
+        phase_2_html: "
+<p><strong>AN&Aacute;LISIS DE VIABILIDAD</strong></p>
+<p>El Servicio de Participaci&oacute;n Ciudadana remitir&aacute; a los servicios t&eacute;cnicos del Ayuntamiento que procedan, las propuestas seleccionadas por los distintos grupos de trabajo para que realicen los an&aacute;lisis de viabilidad t&eacute;cnica de las mismas. Asimismo, valorar&aacute;n el coste de las propuestas. Los informes podr&aacute;n emitirse en cuatro sentidos: viables, asumidas, inviables y prevista su inclusi&oacute;n en los presupuestos de 2021. El an&aacute;lisis de viabilidad t&eacute;cnica incluye la valoraci&oacute;n jur&iacute;dica y presupuestaria.</p>
+<p>Las propuestas que se consideren inviables incluir&aacute;n una explicaci&oacute;n de las razones de su inviabilidad. Las propuestas que superen el importe m&aacute;ximo asignado al distrito al que corresponda o al de ciudad, seg&uacute;n el caso, ser&aacute;n evaluadas como inviables.</p>
+<p>Solo se informar&aacute;n como asumidas las propuestas:&nbsp;</p>
+<ol>
+<li>Que ya se hayan realizado.</li>
+<li>Que se est&eacute;n realizando en ese momento.</li>
+<li>Que est&eacute; prevista su realizaci&oacute;n, de forma fehaciente, en el ejercicio 2020.</li>
+</ol>
+<p>&nbsp;Los informes har&aacute;n constar la situaci&oacute;n que corresponda.</p>"
+        phase_3_html: "
+<p><strong>VOTACI&Oacute;N</strong></p>
+<p>Solamente pasar&aacute;n a la fase de votaci&oacute;n las propuestas que hayan sido valoradas como viables por los servicios t&eacute;cnicos del Ayuntamiento. A tal efecto, el Servicio de Participaci&oacute;n Ciudadana elevar&aacute; propuesta al Concejal delegado de Participaci&oacute;n Ciudadana de aprobaci&oacute;n de las propuestas que deban pasar a votaci&oacute;n de los ciudadanos, estableciendo, adem&aacute;s, la organizaci&oacute;n y los modos de votaci&oacute;n (a trav&eacute;s de la plataforma digital <a href=\"http://www.lpgcdecide.es\">www.lpgcdecide.es</a> y de forma presencial), los lugares habilitados para la votaci&oacute;n presencial y las fechas en cada caso.</p>
+<p>Para ejercer el derecho al voto ser&aacute; condici&oacute;n necesaria estar empadronado en el municipio de Las Palmas de Gran Canaria. La edad m&iacute;nima para poder ejercer el derecho al voto ser&aacute; de diecis&eacute;is a&ntilde;os, cumplidos en el momento de ejercer ese derecho. Se podr&aacute; votar por las propuestas de los distritos y de ciudad. En el caso de distritos solo se podr&aacute; votar por uno. Tanto en la votaci&oacute;n de propuestas de distritos como de ciudad podr&aacute; votarse por cuantas propuestas se desee, siempre y cuando no supere el importe asignado al distrito elegido o el de ciudad.</p>
+<p>Las propuestas se ordenar&aacute;n por n&uacute;mero de votos alcanzados sin que se pueda superar el importe asignado a cada distrito o a la ciudad, seg&uacute;n el caso. La diferencia, en caso de producirse, entre el importe asignado al distrito y el importe de la suma de las propuestas m&aacute;s votadas, se consignar&aacute; en el presupuesto del distrito correspondiente decidiendo su destino la Junta Municipal del mismo. En el caso de la ciudad, esa diferencia, en caso de producirse, se distribuir&iacute;a a partes iguales entre los cinco distritos y, al igual que en el caso anterior, corresponder&aacute; a las Juntas de Distrito decidir sobre su destino.</p>
+<p>Una vez obtenidos los resultados de la votaci&oacute;n, el Concejal delegado de Participaci&oacute;n Ciudadana dictar&aacute; resoluci&oacute;n de aprobaci&oacute;n de las propuestas a ejecutar en el ejercicio 2021.</p>"
+        phase_4_html: "
+<p><strong>EJECUCI&Oacute;N Y SEGUIMIENTO&nbsp;</strong></p>
+<p>El Ayuntamiento incluir&aacute; en el Presupuesto General de 2021 las consignaciones presupuestarias que procedan para la ejecuci&oacute;n de las propuestas aprobadas de los Presupuestos Participativos. Una vez aprobado el Presupuesto general de 2021, los servicios afectados comenzar&aacute;n inmediatamente su ejecuci&oacute;n. Todas las propuestas deber&aacute;n ejecutarse dentro del ejercicio 2021. En caso de que por cualquier circunstancia, alguna propuesta no pudiera ejecutarse parcial o totalmente en 2021, el servicio afectado tomar&aacute; las medidas presupuestarias que procedan para que se ejecute en el ejercicio siguiente.</p>
+<p>El Ayuntamiento establecer&aacute; un procedimiento que permita realizar un seguimiento eficaz de la ejecuci&oacute;n de las propuestas aprobadas de los Presupuestos participativos de 2021, as&iacute; como su comunicaci&oacute;n a las partes interesadas y a la ciudadan&iacute;a en general. A tal fin, y formando parte de ese procedimiento, se crear&aacute; una Comisi&oacute;n de Seguimiento de la Ejecuci&oacute;n del Presupuesto Participativo de 2021que podr&aacute; estar formada por miembros de los grupos de trabajo creados para la selecci&oacute;n de las propuestas; as&iacute; como por representantes de asociaciones y de la sociedad civil en general, ciudadanos interesados y/o especialmente cualificados, t&eacute;cnicos del Servicio de Participaci&oacute;n Ciudadana y el concejal delegado de Participaci&oacute;n Ciudadana. La resoluci&oacute;n de creaci&oacute;n de la Comisi&oacute;n de Seguimiento regular&aacute; su funcionamiento interno.</p>
+<p>Del estado de ejecuci&oacute;n de los Presupuestos Participativos 2021 se informar&aacute; a las Juntas Municipales de Distrito, a los Consejos de Participaci&oacute;n Ciudadana y al Consejo Social de la Ciudad, en las sesiones que se celebren en ese a&ntilde;o y en los posteriores, si fuera necesario. Asimismo, se mantendr&aacute; informada a la ciudadan&iacute;a en general a trav&eacute;s de la p&aacute;gina web municipal y de la plataforma <a href=\"http://www.lpgcdecide.es\">www.lpgcdecide.es</a>.</p>"
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption_html: 'Fase de "Votación" de los presupuestos participativos.'
       polls:

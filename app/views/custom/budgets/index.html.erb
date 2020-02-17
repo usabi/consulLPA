@@ -154,16 +154,13 @@
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
       <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-      <ol>
-        <li><%= t("budgets.index.section_footer.help_text_2_1") %></li>
-        <li><%= t("budgets.index.section_footer.help_text_2_2") %></li>
-        <li><%= t("budgets.index.section_footer.help_text_2_3") %></li>
-        <li><%= t("budgets.index.section_footer.help_text_2_4") %></li>
-      </ol>
-      <p><%= t("budgets.index.section_footer.help_text_3",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
+      <p><%= t("pages.help.budgets.description_2") %></p>
+      <ul class="features">
+        <li><%= t("pages.help.budgets.phase_1_html") %></li>
+        <li><%= t("pages.help.budgets.phase_2_html") %></li>
+        <li><%= t("pages.help.budgets.phase_3_html") %></li>
+        <li><%= t("pages.help.budgets.phase_4_html") %></li>
+      </ul>
     </div>
   </div>
 </div>

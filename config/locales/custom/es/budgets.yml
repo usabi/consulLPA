@@ -32,14 +32,14 @@ es:
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
-      accepting: Presentación de proyectos
-      reviewing: Revisión inicial de proyectos
+      accepting: Presentación de propuestas
+      reviewing: Selección
       selecting: Fase de apoyos
-      valuating: Evaluación de proyectos
+      valuating: Análisis de viabilidad
       publishing_prices: "Resultados del análisis de viabilidad de los proyectos"
-      balloting: Votación final
+      balloting: Votación
       reviewing_ballots: Votación finalizada
-      finished: Resultados
+      finished: Ejecución y seguimiento
     index:
       title: Presupuestos participativos
       empty_budgets: No hay presupuestos participativos.
