@@ -327,7 +327,11 @@ header .top-bar, .menu.float-right {
 
 }
 @media screen and (max-width: 639px) {
+
   header{
+    .logo {
+      max-width: 60px;
+    }
     .subnavigation{
       background-color: $brand-blue;
       ul.float-right {
@@ -337,17 +341,23 @@ header .top-bar, .menu.float-right {
         }
       }
     }
+    .top-bar > span.float-right {
+      padding-top: 15px;
+    }
     .top-bar {
       height: 4rem;
       .top-bar-right {
         background-color: #eee;
         border: 1px solid #ddd;
         width: auto;
-        padding: 0 1rem;
+        padding: 1rem;
+        display: flex;
         ul.menu {
-          text-align: right;
+          display: flex;
           li {
             display: inline-block;
+            height: auto;
+            width: auto;
             a {
               color: black;
               background: none;
