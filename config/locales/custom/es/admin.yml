@@ -167,6 +167,8 @@ es:
           selected: Seleccionados
           undecided: Sin decidir
           unfeasible: Inviables
+          takecharged: "Asumida"
+          included_next_year_budget: "Prev. inclusión en presup. del próx. año"
           max_per_heading: Corte por partida
           winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
@@ -185,6 +187,8 @@ es:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
+          takecharge: "Asumida"
+          nextyearbudget: "Prevista inclusión en presup. del próx. año"
         selected: "Seleccionada"
         select: "Seleccionar"
         list:

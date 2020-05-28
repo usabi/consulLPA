@@ -15,9 +15,15 @@ App.ValuationBudgetInvestmentForm =
   showTakeChargeFields: ->
     $('#valuation_budget_investment_edit_form #feasible_fields').hide('down')
     $('#valuation_budget_investment_edit_form #unfeasible_fields').hide('down')
-    $('#valuation_budget_investment_edit_form #takecharge_fields textarea').removeAttr('disabled')
-    $('#valuation_budget_investment_edit_form #takecharge_fields').show()
+    # $('#valuation_budget_investment_edit_form #takecharge_fields textarea').removeAttr('disabled')
+    $('#valuation_budget_investment_edit_form #takecharge_fields').hide()
     $('#valuation_budget_investment_edit_form #unfeasible_fields textarea').attr('disabled', true)
+
+  showNextYearBudgetFields: ->
+    $('#valuation_budget_investment_edit_form #feasible_fields').hide('down')
+    $('#valuation_budget_investment_edit_form #unfeasible_fields').hide('down')
+    $('#valuation_budget_investment_edit_form #unfeasible_fields textarea').attr('disabled', true)
+    $('#valuation_budget_investment_edit_form #takecharge_fields').hide()
 
   showAllFields: ->
     $('#valuation_budget_investment_edit_form #feasible_fields').show('down')
@@ -33,6 +39,8 @@ App.ValuationBudgetInvestmentForm =
       App.ValuationBudgetInvestmentForm.showNotFeasibleFields()
     else if feasibility == 'takecharge'
       App.ValuationBudgetInvestmentForm.showTakeChargeFields()
+    else if feasibility == 'nextyearbudget'
+      App.ValuationBudgetInvestmentForm.showNextYearBudgetFields()
 
 
   showFeasibilityFieldsOnChange: ->

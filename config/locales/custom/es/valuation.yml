@@ -53,6 +53,7 @@ es:
         unfeasible: Inviable
         undefined: Sin definir
         takecharge: "Asumida"
+        nextyearbudget: "Prevista inclusión en presupuestos del próximo año"
         valuation_finished: Informe finalizado
         duration: Plazo de ejecución
         responsibles: Responsables
@@ -68,6 +69,7 @@ es:
         unfeasible: Inviable
         undefined_feasible: Sin decidir
         takecharge: "Asumida"
+        nextyearbudget: "Prevista inclusión en presupuestos del próximo año"
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que la propuesta sea INVIABLE se mostrará esta información, dato público)</small>
         feasible_explanation_html_takecharge: Informe de resolución <small>(en caso de que la propuesta sea ASUMIDA se mostrará esta información, dato público)</small>
         valuation_finished: Informe finalizado
