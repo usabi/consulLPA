@@ -5,37 +5,54 @@
 
 <h2><%= t("valuation.budget_investments.edit.dossier") %></h2>
 <% if can?(:valuate, @investment) %>
+  <b>FASE ANÁLISIS DE VIABILIDAD:</b></br>
+
+  <p>El Servicio de Participación Ciudadana remitirá a los servicios técnicos del Ayuntamiento que procedan, las propuestas seleccionadas por los distintos grupos de trabajo para que realicen los análisis de viabilidad técnica de las mismas. Asimismo, valorarán el coste de las propuestas. Los informes podrán emitirse en cuatro sentidos: viables, asumidas, inviables y prevista su inclusión en los presupuestos del próximo ejercicio. El análisis de viabilidad técnica incluye la valoración jurídica y presupuestaria. Las propuestas que se consideren inviables incluirán una explicación de las razones de su inviabilidad. Las propuestas que superen el importe máximo asignado al distrito al que corresponda o al de ciudad, según el caso, serán evaluadas como inviables. Solo se informarán como asumidas las propuestas:</p>
+  <ol>
+    <li>Que ya se hayan realizado.</li>
+    <li>Que se estén realizando en ese momento.</li>
+    <li>Que esté prevista su realización, de forma fehaciente, en el ejercicio en curso.</li>
+  </ol>
+
+  <p>Los informes harán constar la situación que corresponda.</p>
   <%= form_for(@investment, url: valuate_valuation_budget_budget_investment_path(@budget, @investment), html: {id: "valuation_budget_investment_edit_form"}) do |f| %>
     <%= render 'shared/errors', resource: @investment %>
     <div class="row">
       <div class="small-12 column">
         <fieldset class="fieldset">
           <legend><%= t('valuation.budget_investments.edit.feasibility') %></legend>
-          <div class="small-3 column">
+          <div class="small-4 column">
               <span class="radio">
                 <%= f.radio_button :feasibility, 'undecided', label: false %>
                 <%= f.label :feasibility_undecided, t('valuation.budget_investments.edit.undefined_feasible') %>
               </span>
           </div>
 
-          <div class="small-3 column">
+          <div class="small-4 column">
               <span class="radio">
                 <%= f.radio_button :feasibility, 'feasible', label: false %>
                 <%= f.label :feasibility_feasible, t('valuation.budget_investments.edit.feasible') %>
               </span>
           </div>
 
-          <div class="small-3 column">
+          <div class="small-4 column">
               <span class="radio">
                 <%= f.radio_button :feasibility, 'unfeasible', label: false %>
                 <%= f.label :feasibility_unfeasible, t('valuation.budget_investments.edit.unfeasible') %>
               </span>
           </div>
 
-          <div class="small-3 column">
+          <div class="small-4 column">
               <span class="radio">
                 <%= f.radio_button :feasibility, 'takecharge', label: false %>
-                <%= f.label :feasibility_unfeasible, t('valuation.budget_investments.edit.takecharge') %>
+                <%= f.label :feasibility_takecharge, t('valuation.budget_investments.edit.takecharge') %>
+              </span>
+          </div>
+
+          <div class="small-8 column">
+              <span class="radio">
+                <%= f.radio_button :feasibility, 'nextyearbudget', label: false %>
+                <%= f.label :feasibility_nextyearbudget, t('valuation.budget_investments.edit.nextyearbudget') %>
               </span>
           </div>
 
