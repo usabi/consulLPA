@@ -172,7 +172,7 @@ GEM
       activesupport (>= 4.1)
       railties (>= 4.1)
       tzinfo (~> 1.2, >= 1.2.2)
-    geocoder (1.4.4)
+    geocoder (1.6.3)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     globalize (5.0.1)
