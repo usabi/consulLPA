@@ -4,6 +4,7 @@ class Budget::Investment
 
   scope :takecharged, -> { where(feasibility: "takecharge") }
   scope :included_next_year_budget, -> { where(feasibility: "nextyearbudget") }
+  scope :not_selected, -> { where(feasibility: "notselected") }
 
   def enough_money?(ballot)
     available_money = ballot.amount_available(heading)
@@ -27,6 +28,20 @@ class Budget::Investment
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
       ids += results.takecharged.pluck(:id)                 if params[:advanced_filters].include?('takecharged')
       ids += results.included_next_year_budget.pluck(:id)   if params[:advanced_filters].include?('included_next_year_budget')
+      ids += results.not_selected.pluck(:id)   if params[:advanced_filters].include?('not_selected')
       results.where("budget_investments.id IN (?)", ids)
+    end
+
+    def not_selected_email_pending?
+      not_selected_email_sent_at.blank? && not_selected? && valuation_finished?
+    end
+
+    def not_selected?
+      feasibility == "notselected"
+    end
+
+    def send_not_selected_email
+      Mailer.budget_investment_not_selected(self).deliver_later
+      update(not_selected_email_sent_at: Time.current)
     end
 end

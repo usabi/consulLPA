@@ -54,6 +54,7 @@ es:
         undefined: Sin definir
         takecharge: "Asumida"
         nextyearbudget: "Prevista inclusión en presupuestos del próximo año"
+        not_selected: "No seleccionada"
         valuation_finished: Informe finalizado
         duration: Plazo de ejecución
         responsibles: Responsables
@@ -70,11 +71,14 @@ es:
         undefined_feasible: Sin decidir
         takecharge: "Asumida"
         nextyearbudget: "Prevista inclusión en presupuestos del próximo año"
+        not_selected: "No seleccionada"
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que la propuesta sea INVIABLE se mostrará esta información, dato público)</small>
         feasible_explanation_html_takecharge: Informe de resolución <small>(en caso de que la propuesta sea ASUMIDA se mostrará esta información, dato público)</small>
+        feasible_explanation_html_not_selected: Informe de no selección <small>(en caso de que la propuesta sea NO SELECCIONADA se mostrará esta información, dato público)</small>
         valuation_finished: Informe finalizado
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
         not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
+        not_selected_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de no selección."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         save: Guardar Cambios
       notice:
