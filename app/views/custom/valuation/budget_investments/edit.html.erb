@@ -49,10 +49,17 @@
               </span>
           </div>
 
-          <div class="small-8 column">
+          <div class="small-4 column">
               <span class="radio">
                 <%= f.radio_button :feasibility, 'nextyearbudget', label: false %>
                 <%= f.label :feasibility_nextyearbudget, t('valuation.budget_investments.edit.nextyearbudget') %>
+              </span>
+          </div>
+
+          <div class="small-4 column">
+              <span class="radio">
+                <%= f.radio_button :feasibility, 'notselected', label: false %>
+                <%= f.label :feasibility_notselected, t('valuation.budget_investments.edit.not_selected') %>
               </span>
           </div>
 
@@ -71,18 +78,16 @@
 
     </div>
 
-    <div id="takecharge_fields" >
+    <div id="not_selected_fields" >
 
       <div class="row">
         <div class="small-12 column">
-          <%= f.label :unfeasibility_explanation, t("valuation.budget_investments.edit.feasible_explanation_html_takecharge") %>
-          <%= f.text_area :unfeasibility_explanation, label: false, rows: 3 %>
+          <%= f.label :not_selected_explanation, t("valuation.budget_investments.edit.feasible_explanation_html_not_selected") %>
+          <%= f.text_area :not_selected_explanation, label: false, rows: 3 %>
         </div>
       </div>
 
     </div>
-
-
 
     <div id="feasible_fields">
 
@@ -122,7 +127,9 @@
               title: t('valuation.budget_investments.edit.valuation_finished'),
               label: false, id: 'js-investment-report-alert',
               "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
-              "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
+              "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert"),
+              "data-not-selected-alert": t("valuation.budget_investments.edit.not_selected_alert")
+          %>
           <span class="checkbox"><%= t("valuation.budget_investments.edit.valuation_finished") %></span>
         <% end %>
       </div>

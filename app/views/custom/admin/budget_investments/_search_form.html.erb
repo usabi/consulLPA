@@ -11,7 +11,7 @@
   <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
     <div class="small-12 column">
       <div class="advanced-filters-content">
-        <% ["feasible", "selected", "undecided", "unfeasible", "takecharged", "included_next_year_budget"].each do |option| %>
+        <% ["feasible", "selected", "undecided", "unfeasible", "takecharged", "included_next_year_budget", "not_selected"].each do |option| %>
           <div class="filter">
             <%= check_box_tag "advanced_filters[]", option, params[:advanced_filters].index(option), id: "advanced_filters_#{option}" %>
             <%= t("admin.budget_investments.index.filters.#{option}") %>

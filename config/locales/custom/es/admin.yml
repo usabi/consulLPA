@@ -169,6 +169,7 @@ es:
           unfeasible: Inviables
           takecharged: "Asumida"
           included_next_year_budget: "Prev. inclusión en presup. del próx. año"
+          not_selected: "No seleccionada"
           max_per_heading: Corte por partida
           winners: Ganadores
           one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
@@ -189,6 +190,7 @@ es:
           undecided: "Sin decidir"
           takecharge: "Asumida"
           nextyearbudget: "Prevista inclusión en presup. del próx. año"
+          notselected: "No seleccionada"
         selected: "Seleccionada"
         select: "Seleccionar"
         list:
