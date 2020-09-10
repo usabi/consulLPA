@@ -51,6 +51,12 @@
       <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
     <% elsif @current_filter == "unselected" %>
       <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
+    <% elsif @current_filter == "takecharged" %>
+      <h3 class="margin-bottom"><%= t("budgets.show.takecharged_title") %></h3>
+    <% elsif @current_filter == "included_next_year_budget" %>
+      <h3 class="margin-bottom"><%= t("budgets.show.included_next_year_budget_title") %></h3>
+    <% elsif @current_filter == "not_selected" %>
+      <h3 class="margin-bottom"><%= t("budgets.show.not_selected_title") %></h3>
     <% end %>
     <table class="table-fixed">
       <thead>
@@ -98,6 +104,39 @@
         <small>
           <%= link_to t("budgets.show.unselected"),
                       budget_path(@budget, filter: "unselected") %>
+        </small>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @current_filter == "takecharged" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.show.takecharged"),
+                      budget_path(@budget, filter: "takecharged") %>
+        </small>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @current_filter == "included_next_year_budget" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.show.included_next_year_budget"),
+                      budget_path(@budget, filter: "included_next_year_budget") %>
+        </small>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @current_filter == "not_selected" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.show.not_selected"),
+                      budget_path(@budget, filter: "not_selected") %>
         </small>
       </div>
     </div>

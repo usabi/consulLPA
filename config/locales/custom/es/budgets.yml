@@ -29,6 +29,12 @@ es:
         unfeasible: Ver propuestas inviables
         unselected_title: Propuestas no seleccionadas para la votación final
         unselected: Ver las propuestas no seleccionadas para la votación final
+        takecharged_title: Propuestas asumidas
+        takecharged: Ver las propuestas asumidas
+        included_next_year_budget_title: Ver las propuestas previstas para su inclusión en presupuestos del próximo año
+        included_next_year_budget: Propuestas previstas para su inclusión en el presupuesto del próximo año
+        not_selected_title: Propuestas no seleccionadas en la fase de viabilidad
+        not_selected: Ver las propuestas no seleccionadas por los técnicos para la votación final
     phase:
       drafting: Borrador (No visible para el público)
       informing: Información
@@ -53,6 +59,9 @@ es:
       investment_proyects: Ver lista completa de propuestas de gasto
       unfeasible_investment_proyects: Ver lista de propuestas de gasto inviables
       not_selected_investment_proyects: Ver lista de propuestas de gasto no seleccionados para la votación final
+      takecharged_investment_proyects: Ver lista de propuestas de gasto asumidas
+      nextyearbudget_investment_proyects: Ver las propuestas previstas para su inclusión en presupuestos del próximo año
+      notselected_investment_proyects: Ver lista de propuestas de gasto no seleccionados por los técnicos para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:
@@ -158,6 +167,12 @@ es:
       unselected_title: Propuestas no seleccionadas para la votación final
       unselected: Ver las propuestas no seleccionadas para la votación final
       see_results: Ver resultados
+      takecharged_title: Ver las propuestas asumidas
+      takecharged: Propuestas asumidas
+      included_next_year_budget_title: Ver las propuestas previstas para su inclusión en el presupuesto del próximo año
+      included_next_year_budget: Propuestas previstas para su inclusión en presupuestos del próximo año
+      not_selected_title: Ver las propuestas no seleccionadas en la fase de viabilidad
+      not_selected: Propuestas no seleccionadas por los técnicos para la votación final
     results:
       link: Resultados
       page_title: "%{budget} - Resultados"
@@ -172,3 +187,6 @@ es:
       accepted: "Propuesta de inversión aceptada: "
       discarded: "Propuesta de inversión descartada: "
       incompatibles: Incompatibles
+      takecharged_investment_proyects: Ver lista de propuestas de gasto asumidas
+      included_next_year_budget_investment_proyects: Ver lista de propuestas de gasto previstas para su inclusión en el presupuesto del próximo año
+      notselected_investment_proyects: Ver lista de propuestas de gasto no seleccionados por los técnicos para la votación final

@@ -102,13 +102,26 @@
                   <small><%= t("budgets.index.investment_proyects") %></small>
                 <% end %>
               </li>
-            <% end %>
-            <li>
-              <%= link_to budget_path(current_budget, filter: "unfeasible") do %>
-                <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
-              <% end %>
-            </li>
-            <% if show_links %>
+              <li>
+                <%= link_to budget_path(current_budget, filter: "unfeasible") do %>
+                  <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to budget_path(current_budget, filter: "takecharged") do %>
+                  <small><%= t("budgets.index.takecharged_investment_proyects") %></small>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to budget_path(current_budget, filter: "included_next_year_budget") do %>
+                  <small><%= t("budgets.index.nextyearbudget_investment_proyects") %></small>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to budget_path(current_budget, filter: "not_selected") do %>
+                  <small><%= t("budgets.index.notselected_investment_proyects") %></small>
+                <% end %>
+              </li>
               <li>
                 <%= link_to budget_path(current_budget, filter: "unselected") do %>
                   <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
