@@ -2,6 +2,9 @@ require_dependency Rails.root.join('app', 'controllers', 'budgets', 'investments
 
 class Budgets::InvestmentsController
   before_action :load_categories, only: [:index, :new, :create, :edit, :update]
+  valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners takecharged included_next_year_budget not_selected]
+
+  has_filters valid_filters, only: [:index, :show, :suggest]
 
   def edit
   end
