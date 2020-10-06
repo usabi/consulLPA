@@ -421,3 +421,6 @@ span.asterisk {
     color: white;
   }
 }
+.pagination li:last-child, .pagination li:first-child, li.pagination-next, li.pagination-previous {
+  display: inline-block;
+}

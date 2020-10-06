@@ -47,6 +47,42 @@
               <%= t("budgets.investments.index.unfeasible_text") %>
           </div>
         </div>
+      <% elsif @current_filter == "unselected" %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.unselected") %>: <%= @heading.try(:name) %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.unselected_text") %>
+          </div>
+        </div>
+      <% elsif @current_filter == "takecharged" %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.takecharged") %>: <%= @heading.try(:name) %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.takecharged_text") %>
+          </div>
+        </div>
+      <% elsif @current_filter == "included_next_year_budget" %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.included_next_year_budget") %>: <%= @heading.try(:name) %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.included_next_year_budget_text") %>
+          </div>
+        </div>
+      <% elsif @current_filter == "selected" %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.selected") %>: <%= @heading.try(:name) %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.selected_text") %>
+          </div>
+        </div>
+      <% elsif @current_filter == "not_selected" %>
+        <div class="small-12 margin-bottom">
+          <h2><%= t("budgets.investments.index.not_selected") %>: <%= @heading.try(:name) %></h2>
+          <div class="callout primary margin">
+              <%= t("budgets.investments.index.not_selected_text") %>
+          </div>
+        </div>
+
       <% elsif @heading.present? %>
         <div class="row">
           <div class="small-12 column">

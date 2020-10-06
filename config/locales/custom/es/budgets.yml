@@ -89,7 +89,17 @@ es:
         unfeasible: Propuestas de inversión no viables
         # unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
         unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+        selected: Propuestas de inversión viables seleccionadas para la votación final
+        selected_text: Las propuestas que pasan a la fase de votación.
+        unselected: Propuestas de inversión no seleccionadas por los técnicos.
+        unselected_text: "Las propuestas que no cumple alguno de los siguientes criterios: Que responda al interés general. La urgencia de la resolución. Necesidad real. Su impacto social. Su efecto en colectivos desfavorecidos. Reclamación histórica. Distribución proporcional y razonable en el caso de las propuestas de distritos. Cualquier otro criterio que a juicio del equipo técnico siempre atendiendo a los criterios de equidad y proporcionalidad."
+        takecharged: Propuestas de inversión asumidas.
+        takecharged_text: Las propuestas que ya se hayan realizado, se estén realizando en ese momento o esté prevista su realización, de forma fehaciente, en el ejercicio 2020.
+        included_next_year_budget: Propuestas de inversión previstas para su inclusión en prespuestos del próximo año
+        included_next_year_budget_text: Las propuestas que los servicios tienen previstas en sus acciones a desarrollar durante el 2021.
         unfeasible_text_definitions: ver definiciones aquí
+        not_selected: Propuestas no seleccionadas
+        not_selected_text: Propuestas que no pasan a la votación final
         by_heading: "Propuestas de inversión con ámbito: %{heading}"
         search_form:
           button: Buscar
