@@ -1,0 +1,21 @@
+<div class="row section-content">
+  <div class="small-12 column">
+    <h3 id="processes" data-magellan-target="processes">
+      <%= t("pages.help.processes.title") %>
+    </h3>
+
+    <p>
+      <% link = link_to(t("pages.help.processes.link"), legislation_processes_path) %>
+      <%= t("pages.help.processes.description", link: link).html_safe %>
+    </p>
+    <p>
+    Cuando accedas a este área podrás ver los procesos “activos” y los “terminados”. Seleccione un proceso activo y podrá acceder a la información del mismo (propuestas, debates, borrador, normativa final) y realizar sus aportaciones.</p>
+    <ul><li> Para realizar una aportación a un proceso activo deberá estar registrado. </li>
+    <li>En el área de “debate previo” el Ayuntamiento plantea cuestiones al ciudadano y usted podrá responder/debatir. </li>
+      <li>En el apartado de “propuestas” podrá ver las que ideas o propuestas ciudadanas que se ha realizado la ciudadanía sobre el reglamento. Aquí podrá crear sus propias propuestas.</li>
+    <li>Y, por último, en “comentarios” podrás comentar los documentos, seleccionando el texto que quieres comentar, ver los comentarios realizados sobre el borrador del reglamento, ver distintas versiones del borrador, etc.
+    </li>
+    </ul>
+    <p> Según el proceso legislativo que esté activo es posible que no estén habilitadas todas las áreas anteriormente descritas.</p>
+  </div>
+</div>
