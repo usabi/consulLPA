@@ -8,23 +8,22 @@
   <div class="orbit-wrapper">
     <ul class="orbit-container">
       <li class="orbit-slide">
-        <!-- <div class="row banner"> -->
-        <!--   <div class="small&#45;12 medium&#45;12 small&#45;centered column text&#45;center"> -->
-        <!--     <h1><%= t("layouts.header.open_city_title_html") %></h1> -->
-        <!--   </div> -->
-        <!-- </div> -->
-        <!-- <div class="row register"> -->
-        <!--   <div class="small&#45;4 medium&#45;3 large&#45;2 small&#45;centered"> -->
-        <!--     <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %> -->
-        <!--   </div> -->
-        <!-- </div> -->
-        <a href="https://decide.laspalmasgc.es/budgets/2" target="_blank">
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
+          </div>
+        </div>
+        <figure class="orbit-figure">
+          <%= image_tag('consulta_publica.jpg', class: 'orbit-image', alt: 'CONSULTA PÚBLICA REGLAMENTO CENTROS CíVICOS Y LOCALES SOCIALES') %>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <a href="/legislation/processes/4" />
           <figure class="orbit-figure">
             <%= image_tag('foto10.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
           </figure>
         </a>
       </li>
-
       <li class="orbit-slide">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
@@ -50,7 +49,7 @@
         </div>
         <div class="row register">
           <div class="small-4 medium-3 large-2 small-centered">
-            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
+            <%= link_to 'Consultar aquí', '/legislation/processes/2', class: "button expanded large", target: "_blank"  %>
           </div>
         </div>
 
@@ -139,7 +138,7 @@
 
     </ul>
     <nav class="orbit-bullets">
-      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span></button>
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
