@@ -8,6 +8,16 @@
   <div class="orbit-wrapper">
     <ul class="orbit-container">
       <li class="orbit-slide">
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
+          </div>
+        </div>
+        <figure class="orbit-figure">
+          <%= image_tag('consulta_publica.jpg', class: 'orbit-image', alt: 'CONSULTA PÚBLICA REGLAMENTO CENTROS CíVICOS Y LOCALES SOCIALES') %>
+        </figure>
+      </li>
+      <li class="orbit-slide">
         <a href="/legislation/processes/4" />
           <figure class="orbit-figure">
             <%= image_tag('foto1.jpg', class: 'orbit-image', alt: 'REGLAMENTO CONSEJO SECTORIAL DE LA DISCAPACIDAD') %>
@@ -109,7 +119,7 @@
 
     </ul>
     <nav class="orbit-bullets">
-      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span></button>
       <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
       <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
