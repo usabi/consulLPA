@@ -55,8 +55,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   create_table "admin_notifications", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
     t.string   "link"
     t.string   "segment_recipient"
     t.integer  "recipients_count"
@@ -84,23 +82,26 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
   end
 
-  add_index "ahoy_events", ["name", "time"], name: "index_ahoy_events_on_name_and_time", using: :btree
-  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
-  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
-  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
-
-  create_table "ballot_lines", force: :cascade do |t|
-    t.integer  "ballot_id"
-    t.integer  "spending_proposal_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  create_table "ballots", force: :cascade do |t|
+  create_table "audits", force: :cascade do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "associated_id"
+    t.string   "associated_type"
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "ballot_lines_count", default: 0
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.jsonb    "audited_changes"
+    t.integer  "version",         default: 0
+    t.string   "comment"
+    t.string   "remote_address"
+    t.string   "request_uuid"
+    t.datetime "created_at"
+    t.index ["associated_type", "associated_id"], name: "associated_index", using: :btree
+    t.index ["auditable_type", "auditable_id", "version"], name: "auditable_index", using: :btree
+    t.index ["created_at"], name: "index_audits_on_created_at", using: :btree
+    t.index ["request_uuid"], name: "index_audits_on_request_uuid", using: :btree
+    t.index ["user_id", "user_type"], name: "user_index", using: :btree
   end
 
   create_table "banner_sections", force: :cascade do |t|
@@ -117,22 +118,31 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
     t.index ["banner_id"], name: "index_banner_translations_on_banner_id", using: :btree
+    t.index ["hidden_at"], name: "index_banner_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_banner_translations_on_locale", using: :btree
   end
 
   create_table "banners", force: :cascade do |t|
-    t.string   "title",            limit: 80
-    t.string   "description"
     t.string   "target_url"
     t.date     "post_started_at"
     t.date     "post_ended_at"
     t.datetime "hidden_at"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.text     "background_color"
     t.text     "font_color"
     t.index ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
+  end
+
+  create_table "budget_administrators", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "administrator_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["administrator_id"], name: "index_budget_administrators_on_administrator_id", using: :btree
+    t.index ["budget_id"], name: "index_budget_administrators_on_budget_id", using: :btree
   end
 
   create_table "budget_ballot_lines", force: :cascade do |t|
@@ -179,10 +189,11 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   create_table "budget_groups", force: :cascade do |t|
-    t.integer "budget_id"
-    t.string  "name",                 limit: 50
-    t.string  "slug"
-    t.integer "max_votable_headings",            default: 1
+    t.integer  "budget_id"
+    t.string   "slug"
+    t.integer  "max_votable_headings", default: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
   end
 
@@ -205,45 +216,29 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.boolean "allow_custom_content",            default: false
     t.text    "latitude"
     t.text    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
-  create_table "budget_investment_milestone_translations", force: :cascade do |t|
-    t.integer  "budget_investment_milestone_id", null: false
-    t.string   "locale",                         null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+  create_table "budget_investment_translations", force: :cascade do |t|
+    t.integer  "budget_investment_id", null: false
+    t.string   "locale",               null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "title"
     t.text     "description"
-    t.index ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
-    t.index ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
-  end
-
-  create_table "budget_investment_milestones", force: :cascade do |t|
-    t.integer  "investment_id"
-    t.string   "title",            limit: 80
-    t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.datetime "publication_date"
-    t.integer  "status_id"
-    t.index ["status_id"], name: "index_budget_investment_milestones_on_status_id", using: :btree
-  end
-
-  create_table "budget_investment_statuses", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
     t.datetime "hidden_at"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
+    t.index ["budget_investment_id"], name: "index_budget_investment_translations_on_budget_investment_id", using: :btree
+    t.index ["hidden_at"], name: "index_budget_investment_translations_on_hidden_at", using: :btree
+    t.index ["locale"], name: "index_budget_investment_translations_on_locale", using: :btree
   end
 
   create_table "budget_investments", force: :cascade do |t|
     t.integer  "author_id"
     t.integer  "administrator_id"
-    t.string   "title"
-    t.text     "description"
+    t.string   "deprecated_title"
+    t.text     "deprecated_description"
     t.string   "external_url"
     t.decimal  "price",                                       precision: 16, scale: 2, default: 0.0
     t.string   "feasibility",                      limit: 15,                          default: "undecided"
@@ -283,6 +278,7 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.string   "author_phone"
     t.text     "not_selected_explanation"
     t.datetime "not_selected_email_sent_at"
+    t.integer  "original_heading_id"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
@@ -305,8 +301,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.integer  "budget_id"
     t.integer  "next_phase_id"
     t.string   "kind",                         null: false
-    t.text     "summary"
-    t.text     "description"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "enabled",       default: true
@@ -347,8 +341,16 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.integer "investment_id"
   end
 
+  create_table "budget_valuators", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "valuator_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["budget_id"], name: "index_budget_valuators_on_budget_id", using: :btree
+    t.index ["valuator_id"], name: "index_budget_valuators_on_valuator_id", using: :btree
+  end
+
   create_table "budgets", force: :cascade do |t|
-    t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
     t.string   "phase",                         limit: 40, default: "accepting"
     t.datetime "created_at",                                                     null: false
@@ -386,10 +388,22 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
+  create_table "comment_translations", force: :cascade do |t|
+    t.integer  "comment_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.datetime "hidden_at"
+    t.index ["comment_id"], name: "index_comment_translations_on_comment_id", using: :btree
+    t.index ["hidden_at"], name: "index_comment_translations_on_hidden_at", using: :btree
+    t.index ["locale"], name: "index_comment_translations_on_locale", using: :btree
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.text     "body"
+    t.text     "deprecated_body"
     t.string   "subject"
     t.integer  "user_id",                            null: false
     t.datetime "created_at"
@@ -459,9 +473,22 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["proposal_id"], name: "index_dashboard_executed_actions_on_proposal_id", using: :btree
   end
 
-  create_table "debates", force: :cascade do |t|
-    t.string   "title",                        limit: 80
+  create_table "debate_translations", force: :cascade do |t|
+    t.integer  "debate_id",   null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
     t.text     "description"
+    t.datetime "hidden_at"
+    t.index ["debate_id"], name: "index_debate_translations_on_debate_id", using: :btree
+    t.index ["hidden_at"], name: "index_debate_translations_on_hidden_at", using: :btree
+    t.index ["locale"], name: "index_debate_translations_on_locale", using: :btree
+  end
+
+  create_table "debates", force: :cascade do |t|
+    t.string   "deprecated_title",             limit: 80
+    t.text     "deprecated_description"
     t.integer  "author_id"
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
@@ -491,7 +518,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_debates_on_hot_score", using: :btree
-    t.index ["title"], name: "index_debates_on_title", using: :btree
     t.index ["tsv"], name: "index_debates_on_tsv", using: :gin
   end
 
@@ -668,65 +694,22 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.string   "title"
     t.text     "changelog"
     t.text     "body"
-    t.text     "body_html"
-    t.text     "toc_html"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_draft_version_translations_on_hidden_at", using: :btree
     t.index ["legislation_draft_version_id"], name: "index_900e5ba94457606e69e89193db426e8ddff809bc", using: :btree
     t.index ["locale"], name: "index_legislation_draft_version_translations_on_locale", using: :btree
   end
 
   create_table "legislation_draft_versions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.string   "title"
-    t.text     "changelog"
     t.string   "status",                 default: "draft"
     t.boolean  "final_version",          default: false
-    t.text     "body"
     t.datetime "hidden_at"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
-    t.text     "body_html"
-    t.text     "toc_html"
     t.index ["hidden_at"], name: "index_legislation_draft_versions_on_hidden_at", using: :btree
     t.index ["legislation_process_id"], name: "index_legislation_draft_versions_on_legislation_process_id", using: :btree
     t.index ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
-  end
-
-  create_table "legislation_people_proposals", force: :cascade do |t|
-    t.integer  "legislation_process_id"
-    t.string   "title",                  limit: 80
-    t.text     "description"
-    t.integer  "author_id"
-    t.datetime "hidden_at"
-    t.integer  "flags_count",                       default: 0
-    t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_up",                   default: 0
-    t.integer  "comments_count",                    default: 0
-    t.datetime "confirmed_hide_at"
-    t.bigint   "hot_score",                         default: 0
-    t.integer  "confidence_score",                  default: 0
-    t.string   "responsible_name",       limit: 60
-    t.text     "summary"
-    t.string   "video_url"
-    t.tsvector "tsv"
-    t.datetime "retired_at"
-    t.string   "retired_reason"
-    t.text     "retired_explanation"
-    t.integer  "community_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.integer  "cached_votes_total",                default: 0
-    t.integer  "cached_votes_down",                 default: 0
-    t.boolean  "selected"
-    t.boolean  "validated"
-    t.integer  "cached_votes_score",                default: 0
-    t.string   "email"
-    t.string   "phone"
-    t.string   "twitter"
-    t.string   "facebook"
-    t.string   "instagram"
-    t.string   "youtube"
-    t.string   "website"
-    t.index ["cached_votes_score"], name: "index_legislation_people_proposals_on_cached_votes_score", using: :btree
   end
 
   create_table "legislation_process_translations", force: :cascade do |t|
@@ -740,14 +723,13 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.text     "additional_info"
     t.text     "milestones_summary"
     t.text     "homepage"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_process_translations_on_hidden_at", using: :btree
     t.index ["legislation_process_id"], name: "index_199e5fed0aca73302243f6a1fca885ce10cdbb55", using: :btree
     t.index ["locale"], name: "index_legislation_process_translations_on_locale", using: :btree
   end
 
   create_table "legislation_processes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.text     "additional_info"
     t.date     "start_date"
     t.date     "end_date"
     t.date     "debate_start_date"
@@ -757,27 +739,23 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.date     "allegations_end_date"
     t.date     "result_publication_date"
     t.datetime "hidden_at"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.text     "summary"
-    t.boolean  "debate_phase_enabled",              default: false
-    t.boolean  "allegations_phase_enabled",         default: false
-    t.boolean  "draft_publication_enabled",         default: false
-    t.boolean  "result_publication_enabled",        default: false
-    t.boolean  "published",                         default: true
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.boolean  "debate_phase_enabled",       default: false
+    t.boolean  "allegations_phase_enabled",  default: false
+    t.boolean  "draft_publication_enabled",  default: false
+    t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
     t.date     "proposals_phase_start_date"
     t.date     "proposals_phase_end_date"
     t.boolean  "proposals_phase_enabled"
     t.text     "proposals_description"
     t.date     "draft_start_date"
     t.date     "draft_end_date"
-    t.boolean  "draft_phase_enabled",               default: false
-    t.boolean  "homepage_enabled",                  default: false
+    t.boolean  "draft_phase_enabled",        default: false
+    t.boolean  "homepage_enabled",           default: false
     t.text     "background_color"
     t.text     "font_color"
-    t.date     "people_proposals_phase_start_date"
-    t.date     "people_proposals_phase_end_date"
-    t.boolean  "people_proposals_phase_enabled"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree
@@ -829,13 +807,14 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "value"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_question_option_translations_on_hidden_at", using: :btree
     t.index ["legislation_question_option_id"], name: "index_61bcec8729110b7f8e1e9e5ce08780878597a209", using: :btree
     t.index ["locale"], name: "index_legislation_question_option_translations_on_locale", using: :btree
   end
 
   create_table "legislation_question_options", force: :cascade do |t|
     t.integer  "legislation_question_id"
-    t.string   "value"
     t.integer  "answers_count",           default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                          null: false
@@ -850,13 +829,14 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.text     "title"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_legislation_question_translations_on_hidden_at", using: :btree
     t.index ["legislation_question_id"], name: "index_d34cc1e1fe6d5162210c41ce56533c5afabcdbd3", using: :btree
     t.index ["locale"], name: "index_legislation_question_translations_on_locale", using: :btree
   end
 
   create_table "legislation_questions", force: :cascade do |t|
     t.integer  "legislation_process_id"
-    t.text     "title"
     t.integer  "answers_count",          default: 0
     t.datetime "hidden_at"
     t.datetime "created_at",                         null: false
@@ -884,6 +864,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.string   "postal_code",     null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["document_number", "document_type"], name: "index_local_census_records_on_document_number_and_document_type", unique: true, using: :btree
+    t.index ["document_number"], name: "index_local_census_records_on_document_number", using: :btree
   end
 
   create_table "locks", force: :cascade do |t|
@@ -933,12 +915,10 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   create_table "milestones", force: :cascade do |t|
     t.string   "milestoneable_type"
     t.integer  "milestoneable_id"
-    t.string   "title",              limit: 80
-    t.text     "description"
     t.datetime "publication_date"
     t.integer  "status_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.index ["status_id"], name: "index_milestones_on_status_id", using: :btree
   end
 
@@ -1076,8 +1056,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   create_table "poll_question_answers", force: :cascade do |t|
-    t.string  "title"
-    t.text    "description"
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted",  default: false
@@ -1090,6 +1068,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "title"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_poll_question_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_poll_question_translations_on_locale", using: :btree
     t.index ["poll_question_id"], name: "index_poll_question_translations_on_poll_question_id", using: :btree
   end
@@ -1099,7 +1079,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.integer  "poll_id"
     t.integer  "author_id"
     t.string   "author_visible_name"
-    t.string   "title"
     t.integer  "comments_count"
     t.datetime "hidden_at"
     t.datetime "created_at"
@@ -1152,6 +1131,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.string   "name"
     t.text     "summary"
     t.text     "description"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_poll_translations_on_hidden_at", using: :btree
     t.index ["locale"], name: "index_poll_translations_on_locale", using: :btree
     t.index ["poll_id"], name: "index_poll_translations_on_poll_id", using: :btree
   end
@@ -1181,19 +1162,14 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   create_table "polls", force: :cascade do |t|
-    t.string   "name"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "published",          default: false
     t.boolean  "geozone_restricted", default: false
-    t.text     "summary"
-    t.text     "description"
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
     t.string   "slug"
-    t.boolean  "results_enabled",    default: false
-    t.boolean  "stats_enabled",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "budget_id"
@@ -1236,31 +1212,46 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "confirmed_hide_at"
   end
 
-  create_table "proposals", force: :cascade do |t|
-    t.string   "title",               limit: 80
+  create_table "proposal_translations", force: :cascade do |t|
+    t.integer  "proposal_id",         null: false
+    t.string   "locale",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "title"
     t.text     "description"
+    t.text     "summary"
+    t.text     "retired_explanation"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_proposal_translations_on_hidden_at", using: :btree
+    t.index ["locale"], name: "index_proposal_translations_on_locale", using: :btree
+    t.index ["proposal_id"], name: "index_proposal_translations_on_proposal_id", using: :btree
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string   "deprecated_title",               limit: 80
+    t.text     "deprecated_description"
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.integer  "flags_count",                    default: 0
+    t.integer  "flags_count",                               default: 0
     t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_up",                default: 0
-    t.integer  "comments_count",                 default: 0
+    t.integer  "cached_votes_up",                           default: 0
+    t.integer  "comments_count",                            default: 0
     t.datetime "confirmed_hide_at"
-    t.bigint   "hot_score",                      default: 0
-    t.integer  "confidence_score",               default: 0
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "responsible_name",    limit: 60
-    t.text     "summary"
+    t.bigint   "hot_score",                                 default: 0
+    t.integer  "confidence_score",                          default: 0
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.string   "responsible_name",               limit: 60
+    t.text     "deprecated_summary"
     t.string   "video_url"
     t.tsvector "tsv"
     t.integer  "geozone_id"
     t.datetime "retired_at"
     t.string   "retired_reason"
-    t.text     "retired_explanation"
+    t.text     "deprecated_retired_explanation"
     t.integer  "community_id"
     t.datetime "published_at"
-    t.boolean  "selected",                       default: false
+    t.boolean  "selected",                                  default: false
     t.index ["author_id", "hidden_at"], name: "index_proposals_on_author_id_and_hidden_at", using: :btree
     t.index ["author_id"], name: "index_proposals_on_author_id", using: :btree
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
@@ -1269,8 +1260,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
-    t.index ["summary"], name: "index_proposals_on_summary", using: :btree
-    t.index ["title"], name: "index_proposals_on_title", using: :btree
     t.index ["tsv"], name: "index_proposals_on_tsv", using: :gin
   end
 
@@ -1301,6 +1290,15 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["related_content_id"], name: "opposite_related_content", using: :btree
   end
 
+  create_table "remote_translations", force: :cascade do |t|
+    t.string   "locale"
+    t.integer  "remote_translatable_id"
+    t.string   "remote_translatable_type"
+    t.text     "error_message"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "reports", force: :cascade do |t|
     t.boolean  "stats"
     t.boolean  "results"
@@ -1321,8 +1319,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   create_table "signature_sheets", force: :cascade do |t|
     t.string   "signable_type"
     t.integer  "signable_id"
-    t.text     "document_numbers"
-    t.boolean  "processed",        default: false
+    t.text     "required_fields_to_verify"
+    t.boolean  "processed",                 default: false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1335,6 +1333,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.boolean  "verified",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_birth"
+    t.string   "postal_code"
   end
 
   create_table "site_customization_content_blocks", force: :cascade do |t|
@@ -1371,9 +1371,6 @@ ActiveRecord::Schema.define(version: 20200709124137) do
 
   create_table "site_customization_pages", force: :cascade do |t|
     t.string   "slug",                                 null: false
-    t.string   "title"
-    t.string   "subtitle"
-    t.text     "content"
     t.boolean  "more_info_flag"
     t.boolean  "print_content_flag"
     t.string   "status",             default: "draft"
@@ -1511,6 +1508,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.string  "description"
     t.integer "budget_investments_count", default: 0
     t.integer "valuator_group_id"
+    t.boolean "can_comment",              default: true
+    t.boolean "can_edit_dossier",         default: true
     t.index ["user_id"], name: "index_valuators_on_user_id", using: :btree
   end
 
@@ -1592,11 +1591,7 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   create_table "widget_cards", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "link_text"
     t.string   "link_url"
-    t.string   "label"
     t.boolean  "header",                     default: false
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
@@ -1613,7 +1608,11 @@ ActiveRecord::Schema.define(version: 20200709124137) do
   end
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "budget_administrators", "administrators"
+  add_foreign_key "budget_administrators", "budgets"
   add_foreign_key "budget_investments", "communities"
+  add_foreign_key "budget_valuators", "budgets"
+  add_foreign_key "budget_valuators", "valuators"
   add_foreign_key "dashboard_administrator_tasks", "users"
   add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
   add_foreign_key "dashboard_executed_actions", "proposals"
