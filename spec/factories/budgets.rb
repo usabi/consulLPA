@@ -6,6 +6,22 @@ FactoryBot.define do
     external_url         "http://external_documention.org"
     terms_of_service     "1"
     association :author, factory: :user
+
+    trait :feasible do
+      feasible true
+    end
+
+    trait :unfeasible do
+      feasible false
+    end
+
+    trait :finished do
+      valuation_finished true
+    end
+
+    trait :unfinished do
+      valuation_finished false
+    end
   end
 
   factory :budget do
@@ -207,5 +223,14 @@ FactoryBot.define do
     association :heading, factory: :budget_heading
     locale "en"
     body "Some heading contents"
+  end
+
+  factory :ballot do
+    user
+  end
+
+  factory :ballot_line do
+    ballot
+    spending_proposal { build(:spending_proposal, feasible: true) }
   end
 end
