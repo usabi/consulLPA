@@ -1,15 +1,15 @@
 # config valid only for current version of Capistrano
-lock '~> 3.10.1'
+lock "~> 3.10.1"
 
 def deploysecret(key)
-  @deploy_secrets_yml ||= YAML.load_file('config/deploy-secrets.yml')[fetch(:stage).to_s]
-  @deploy_secrets_yml.fetch(key.to_s, 'undefined')
+  @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
+  @deploy_secrets_yml.fetch(key.to_s, "undefined")
 end
 
 set :rails_env, fetch(:stage)
-set :rvm1_ruby_version, '2.3.2'
+set :rvm1_ruby_version, "2.3.2"
 
-set :application, 'consul'
+set :application, "consul"
 set :full_app_name, deploysecret(:full_app_name)
 
 set :server_name, deploysecret(:server_name)
@@ -21,13 +21,12 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/environments/production.rb lib/custom/census_api.rb
-}
-set :linked_dirs, %w{log tmp public/system public/assets}
+set :linked_files, %w{config/database.yml config/secrets.yml config/environments/production.rb lib/custom/census_api.rb}
+set :linked_dirs, %w{log tmp public/system public/assets public/ckeditor_assets}
 
 set :keep_releases, 5
 
-set :local_user, ENV['USER']
+set :local_user, ENV["USER"]
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -52,7 +51,7 @@ namespace :deploy do
   # after :published, 'refresh_sitemap'
   after :publishing, 'restart_tmp'
 
-  after :finishing, 'deploy:cleanup'
+  after :finishing, "deploy:cleanup"
 end
 
 # RVM is already installed on server, so these lines are not needed
@@ -74,7 +73,7 @@ task :refresh_sitemap do
   on roles(:app) do
     within release_path do
       with rails_env: fetch(:rails_env) do
-        execute :rake, 'sitemap:refresh:no_ping'
+        execute :rake, "sitemap:refresh:no_ping"
       end
     end
   end
