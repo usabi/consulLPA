@@ -50,8 +50,19 @@ namespace :deploy do
   after :published, 'delayed_job:restart'
   # after :published, 'refresh_sitemap'
   after :publishing, 'restart_tmp'
+  # after "deploy:migrate", "add_new_settings"
+  # after :publishing, "deploy:restart"
+  # after :published, "delayed_job:restart"
+  # after :published, "refresh_sitemap"
 
   after :finishing, "deploy:cleanup"
+
+
+  desc "Deploys and runs the tasks needed to upgrade to a new release"
+  task :upgrade do
+    after "add_new_settings", "execute_release_tasks"
+    invoke "deploy"
+  end
 end
 
 # RVM is already installed on server, so these lines are not needed
@@ -74,6 +85,26 @@ task :refresh_sitemap do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "sitemap:refresh:no_ping"
+      end
+    end
+  end
+end
+
+task :add_new_settings do
+  on roles(:db) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "settings:add_new_settings"
+      end
+    end
+  end
+end
+
+task :execute_release_tasks do
+  on roles(:app) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "consul:execute_release_tasks"
       end
     end
   end
