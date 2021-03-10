@@ -68,7 +68,9 @@
           <% if answer.description.present? %>
             <div class="margin-top">
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                <%= sanitize_and_auto_link simple_format(answer.description) %>
+                <%#= sanitize_and_auto_link simple_format(answer.description) %>
+                  <%= wysiwyg(answer.description) %>
+                  <%# Cambiar por wysiwyg %>
               </div>
               <div class="margin">
                 <a id="read_more_<%= answer.id %>"
