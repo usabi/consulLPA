@@ -9,7 +9,10 @@
 
       <h1><%= @budget.name %></h1>
 
-      <%= sanitize_and_auto_link(@budget.description) %>
+      <%#= sanitize_and_auto_link(@budget.description) %>
+      <%# TODO: cambiar por wysiwyg %>
+      <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
+
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
