@@ -175,7 +175,7 @@
 
 <h1><%= @investment.title %></h1>
 
-<%= safe_html_with_links @investment.description %>
+<%= sanitize_and_auto_link @investment.description %>
 
 <h2><%= t("valuation.budget_investments.show.info") %></h2>
 

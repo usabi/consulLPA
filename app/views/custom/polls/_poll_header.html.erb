@@ -5,7 +5,8 @@
 
       <h2><%= @poll.name %></h2>
 
-      <%= safe_html_with_links simple_format(@poll.summary, {}, sanitize: false) %>
+      <%= sanitize_and_auto_link simple_format(@poll.summary, {}, sanitize: false) %>
+       <%# TODO: sin sanitize? %>
 
       <% if @poll.geozones.any? %>
         <ul class="no-bullet margin-top tags">
