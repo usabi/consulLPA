@@ -4,10 +4,10 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
-<div class="orbit no-margin-top" role="region" aria-label="banner" data-orbit>
+<div class="orbit no-margin-top" role="region" aria-label="banner" data-use-m-u-i="false" data-orbit >
   <div class="orbit-wrapper">
-    <ul class="orbit-container">
-      <li class="orbit-slide">
+    <ul class="orbit-container no-bullet" tabindex="0">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row register">
           <div class="small-4 medium-3 large-2 small-centered">
             <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
@@ -17,21 +17,21 @@
           <%= image_tag('consulta_publica.jpg', class: 'orbit-image', alt: 'CONSULTA PÚBLICA REGLAMENTO CENTROS CíVICOS Y LOCALES SOCIALES') %>
         </figure>
       </li>
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <a href="/legislation/processes/4" />
           <figure class="orbit-figure">
             <%= image_tag('foto1.jpg', class: 'orbit-image', alt: 'REGLAMENTO CONSEJO SECTORIAL DE LA DISCAPACIDAD') %>
           </figure>
         </a>
       </li>
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <a href="/budgets/4/results" />
           <figure class="orbit-figure">
             <%= image_tag('foto10.jpg', class: 'orbit-image', alt: 'Resultados!') %>
           </figure>
         </a>
       </li>
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row register">
           <div class="small-4 medium-3 large-2 small-centered">
             <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
@@ -41,7 +41,7 @@
           <%= image_tag('consulta_publica.jpg', class: 'orbit-image', alt: 'CONSULTA PÚBLICA REGLAMENTO CENTROS CíVICOS Y LOCALES SOCIALES') %>
         </figure>
       </li>
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row register">
           <div class="small-4 medium-3 large-2 small-centered">
             <%= link_to 'Consultar aquí', '/legislation/processes/2', class: "button expanded large", target: "_blank"  %>
@@ -52,7 +52,7 @@
         </figure>
       </li>
 
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
             <h1><%= t("layouts.header.open_city_title_html") %></h1>
@@ -69,7 +69,7 @@
         </figure>
       </li>
 
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
             <h1><%= t("layouts.header.open_city_title_html") %></h1>
@@ -86,7 +86,7 @@
         </figure>
       </li>
 
-      <li class="orbit-slide">
+      <li class="orbit-slide" aria-live="polite">
         <div class="row banner">
           <div class="small-12 medium-12 small-centered column text-center">
             <h1><%= t("layouts.header.open_city_title_html") %></h1>
@@ -118,16 +118,17 @@
       <!-- </li> -->
 
     </ul>
-    <nav class="orbit-bullets">
-      <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span></button>
-      <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-      <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
-      <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
-      <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
-      <button data-slide="5"><span class="show-for-sr">Second slide details.</span></button>
-    </nav>
   </div>
+  <nav class="orbit-bullets">
+    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span></button>
+    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="2"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="3"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="4"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="5"><span class="show-for-sr">Second slide details.</span></button>
+  </nav>
 </div>
+
 <div class="small-12 row sub-banner">
   <p class="lead">
   <%= t("layouts.header.open_city_slogan_html") %>
