@@ -30,9 +30,9 @@ App.ValuationBudgetInvestmentForm =
   showFeasibilityFields: ->
     App.ValuationBudgetInvestmentForm.hideNotActiveFields()
     feasibility = $("#valuation_budget_investment_edit_form input[type=radio][name='budget_investment[feasibility]']:checked").val()
-    if feasibility == 'feasible'
+    if feasibility == "feasible"
       App.ValuationBudgetInvestmentForm.showFeasibleFields()
-    else if feasibility == 'unfeasible'
+    else if feasibility == "unfeasible"
       App.ValuationBudgetInvestmentForm.showNotFeasibleFields()
     else if feasibility == 'nextyearbudget'
       return false
