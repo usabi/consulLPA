@@ -75,22 +75,22 @@
     <% end %>
 
     <p>
-      <%= link_to budget_url(@budget) do %>
+      <%= link_to budget_path(@budget) do %>
         <small><%= t("budgets.results.investment_proyects") %></small>
       <% end %><br>
-      <%= link_to budget_url(@budget, filter: 'unfeasible') do %>
+      <%= link_to budget_path(@budget, filter: 'unfeasible') do %>
         <small><%= t("budgets.results.unfeasible_investment_proyects") %></small>
       <% end %><br>
 
-      <%= link_to budget_url(@budget, filter: 'takecharged') do %>
+      <%= link_to budget_path(@budget, filter: 'takecharged') do %>
         <small><%= t("budgets.results.takecharged_investment_proyects") %></small>
       <% end %><br>
 
-      <%= link_to budget_url(@budget, filter: 'nextyearbudget') do %>
+      <%= link_to budget_path(@budget, filter: 'nextyearbudget') do %>
         <small><%= t("budgets.results.included_next_year_budget_investment_proyects") %></small>
       <% end %><br>
 
-      <%= link_to budget_url(@budget, filter: 'not_selected') do %>
+      <%= link_to budget_path(@budget, filter: 'not_selected') do %>
         <small><%= t("budgets.results.notselected_investment_proyects") %></small>
       <% end %><br>
       <!-- <%= link_to budget_url(@budget, filter: 'unselected') do %>

@@ -24,6 +24,7 @@ class Budget
 
       def check_valid_heading
         return if ballot.valid_heading?(heading)
+
         errors.add(:heading, "This heading's budget is invalid, or a heading on the same group was already selected")
       end
 
@@ -31,11 +32,13 @@ class Budget
         errors.add(:investment, "unselected investment") unless investment.selected?
       end
 
-      def set_denormalized_ids
-        self.heading_id ||= investment.try(:heading_id)
-        self.group_id   ||= investment.try(:group_id)
-        self.budget_id  ||= investment.try(:budget_id)
-      end
+      private
+
+        def set_denormalized_ids
+          self.heading_id ||= investment&.heading_id
+          self.group_id   ||= investment&.group_id
+          self.budget_id  ||= investment&.budget_id
+        end
 
       def store_user_heading
         ballot.user.update(balloted_heading_id: heading.id) unless ballot.physical == true

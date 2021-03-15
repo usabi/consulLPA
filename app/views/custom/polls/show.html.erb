@@ -38,7 +38,8 @@
     <div class="row margin">
       <div class="small-12 medium-9 column">
         <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= safe_html_with_links simple_format(@poll.description, {}, sanitize: false) %>
+        <%= sanitize_and_auto_link simple_format(@poll.description, {}, sanitize: false) %>
+        <%# TODO: sin sanitize? %>
       </div>
 
       <% if false %>
@@ -67,7 +68,9 @@
           <% if answer.description.present? %>
             <div class="margin-top">
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                <%= safe_html_with_links simple_format(answer.description) %>
+                <%#= sanitize_and_auto_link simple_format(answer.description) %>
+                  <%= wysiwyg(answer.description) %>
+                  <%# Cambiar por wysiwyg %>
               </div>
               <div class="margin">
                 <a id="read_more_<%= answer.id %>"

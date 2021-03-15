@@ -2,7 +2,7 @@ require_dependency Rails.root.join('app', 'models', 'user').to_s
 class User
   def minimum_votation_required_age?
     return false unless date_of_birth.present?
-    Time.current - date_of_birth > 16.years
+    Time.current - date_of_birth > 16.years #TODO: cambiar por configuración
   end
   def after_database_authentication
     if self.residence_verified_at && self.residence_verified_at < Time.now-12.month
