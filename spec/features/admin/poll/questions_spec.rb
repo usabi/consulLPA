@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin poll questions" do
+describe "Admin poll questions" do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
@@ -115,6 +115,10 @@ feature "Admin poll questions" do
     select "Proposals", from: "poll_question_poll_id"
 
     click_button "Save"
+
+    expect(page).to have_content(proposal.title)
+
+    visit admin_questions_path
 
     expect(page).to have_content(proposal.title)
   end

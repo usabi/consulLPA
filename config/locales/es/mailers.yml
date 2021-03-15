@@ -3,7 +3,7 @@ es:
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
     comment:
       hi: Hola
-      new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
+      new_comment_by_html: Hay un nuevo comentario de <strong>%{commenter}</strong> en
       subject: Alguien ha comentado en tu %{commentable}
       title: Nuevo comentario
     config:
@@ -17,29 +17,9 @@ es:
       title: Verifica tu cuenta con el siguiente enlace
     reply:
       hi: Hola
-      new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
+      new_reply_by_html: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
-    unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso o para el próximo que se cree.'
-      new_href: "nueva propuesta de inversión"
-      reconsider_html: "Si consideras que la propuesta rechazada cumple los requisitos para mantenerla como propuesta de inversión, podrás comunicarlo, en el plazo de 48 horas, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu propuesta."
-      sincerely: "Atentamente"
-      signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu propuesta de inversión '%{code}' ha sido marcada como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu propuesta <strong>'%{title}'</strong> quedará excluida de este proceso participativo por el siguiente motivo:"
-    budget_investment_unfeasible:
-      hi: "Estimado usuario,"
-      new_html: 'Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones para el próximo proceso.'
-      new_href: "nuevo proyecto de gasto"
-      reconsider_html: "Si consideras que el proyecto rechazado cumple los requisitos para mantenerlo como proyecto de gasto, podrás comunicarlo, en el plazo de 48 horas, indicando necesariamente para su tramitación el código %{code} como asunto del correo, correspondiente a tu proyecto."
-      sincerely: "Atentamente"
-      signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
-      sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
-      unfeasible_html: "Desde el Ayuntamiento queremos agradecer tu participación en los <strong>Presupuestos Participativos</strong>. Lamentamos informarte de que tu proyecto <strong>'%{title}'</strong> quedará excluido de este proceso participativo por el siguiente motivo:"
     proposal_notification_digest:
       info: "A continuación te mostramos las nuevas notificaciones que han publicado los autores de las propuestas que estás apoyando en %{org_name}."
       title: "Notificaciones de propuestas en %{org_name}"
@@ -86,6 +66,12 @@ es:
       thanks: "Gracias de nuevo por tu participación."
       sincerely: "Atentamente"
       signatory: "CONCEJALÍA DE PARTICIPACIÓN CIUDADANA"
+    evaluation_comment:
+      subject: "Nuevo comentario de evaluación"
+      title: Nuevo comentario de evaluación para %{investment}
+      hi: Hola
+      new_comment_by_html: Hay un nuevo comentario de evaluación de <strong>%{commenter}</strong> en el presupuesto participativo %{investment}
+      commenter_info: "%{commenter}, %{time}"
     new_actions_notification_rake_created:
       subject: "Más novedades de tu propuesta ciudadana"
       hi: "Hola %{name},"

@@ -1,29 +1,4 @@
 FactoryBot.define do
-  factory :spending_proposal do
-    sequence(:title)     { |n| "Spending Proposal #{n} title" }
-    description          "Spend money on this"
-    feasible_explanation "This proposal is not viable because..."
-    external_url         "http://external_documention.org"
-    terms_of_service     "1"
-    association :author, factory: :user
-
-    trait :feasible do
-      feasible true
-    end
-
-    trait :unfeasible do
-      feasible false
-    end
-
-    trait :finished do
-      valuation_finished true
-    end
-
-    trait :unfinished do
-      valuation_finished false
-    end
-  end
-
   factory :budget do
     sequence(:name) { |n| "#{Faker::Lorem.word} #{n}" }
     currency_symbol "€"
@@ -77,6 +52,8 @@ FactoryBot.define do
 
     trait :finished do
       phase "finished"
+      results_enabled true
+      stats_enabled true
     end
   end
 
@@ -90,12 +67,14 @@ FactoryBot.define do
   end
 
   factory :budget_heading, class: "Budget::Heading" do
-    association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
     latitude "40.416775"
     longitude "-3.703790"
+
+    transient { budget nil }
+    group { association :budget_group, budget: budget || association(:budget) }
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
@@ -104,7 +83,7 @@ FactoryBot.define do
 
   factory :budget_investment, class: "Budget::Investment" do
     sequence(:title) { |n| "Budget Investment #{n} title" }
-    association :heading, factory: :budget_heading
+    heading { association :budget_heading, budget: budget }
     association :author, factory: :user
     description          "Spend money on this"
     price                10
@@ -205,8 +184,13 @@ FactoryBot.define do
   end
 
   factory :budget_ballot_line, class: "Budget::Ballot::Line" do
-    association :ballot, factory: :budget_ballot
     association :investment, factory: :budget_investment
+
+    transient { user nil }
+
+    ballot do
+      association :budget_ballot, budget: investment.budget.reload, user: user || association(:user)
+    end
   end
 
   factory :budget_reclassified_vote, class: "Budget::ReclassifiedVote" do

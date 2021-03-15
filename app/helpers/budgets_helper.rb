@@ -44,10 +44,6 @@ module BudgetsHelper
     end
   end
 
-  def display_budget_countdown?(budget)
-    budget.balloting?
-  end
-
   def css_for_ballot_heading(heading)
     return "" if current_ballot.blank? || @current_filter == "unfeasible"
     current_ballot.has_lines_in_heading?(heading) ? "is-active" : ""
@@ -108,5 +104,19 @@ module BudgetsHelper
                               starts_at: balloting_phase.starts_at,
                               ends_at:   balloting_phase.ends_at }),
             method: :post
+  end
+
+  def budget_subnav_items_for(budget)
+    {
+      results:    t("budgets.results.link"),
+      stats:      t("stats.budgets.link"),
+      executions: t("budgets.executions.link")
+    }.select { |section, _| can?(:"read_#{section}", budget) }.map do |section, text|
+      {
+        text: text,
+        url:  send("budget_#{section}_path", budget),
+        active: controller_name == section.to_s
+      }
+    end
   end
 end
