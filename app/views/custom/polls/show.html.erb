@@ -38,7 +38,9 @@
     <div class="row margin">
       <div class="small-12 medium-9 column">
         <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= sanitize_and_auto_link simple_format(@poll.description, {}, sanitize: false) %>
+        <%#= sanitize_and_auto_link simple_format(@poll.description, {}, sanitize: false) %>
+        <%= simple_format_no_tags_no_sanitize @poll.description %>
+
         <%# TODO: sin sanitize? %>
       </div>
 

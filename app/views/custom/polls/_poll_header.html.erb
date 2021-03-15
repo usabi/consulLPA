@@ -9,7 +9,8 @@
 
       <h1><%= @poll.name %></h1>
 
-      <%= sanitize_and_auto_link simple_format(@poll.summary, {}, sanitize: false) %>
+      <%#= sanitize_and_auto_link simple_format(@poll.summary, {}, sanitize: false) %>
+      <%= simple_format_no_tags_no_sanitize @poll.summary%>
        <%# TODO: sin sanitize? %>
 
       <% if @poll.geozones.any? %>
