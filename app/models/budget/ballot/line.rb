@@ -1,7 +1,7 @@
 class Budget
   class Ballot
-    class Line < ApplicationRecord
-      belongs_to :ballot
+    class Line < ActiveRecord::Base
+      belongs_to :ballot, counter_cache: :ballot_lines_count
       belongs_to :investment, counter_cache: :ballot_lines_count
       belongs_to :heading
       belongs_to :group
@@ -31,17 +31,15 @@ class Budget
         errors.add(:investment, "unselected investment") unless investment.selected?
       end
 
-      private
+      def set_denormalized_ids
+        self.heading_id ||= investment.try(:heading_id)
+        self.group_id   ||= investment.try(:group_id)
+        self.budget_id  ||= investment.try(:budget_id)
+      end
 
-        def set_denormalized_ids
-          self.heading_id ||= investment.try(:heading_id)
-          self.group_id   ||= investment.try(:group_id)
-          self.budget_id  ||= investment.try(:budget_id)
-        end
-
-        def store_user_heading
-          ballot.user.update(balloted_heading_id: heading.id) unless ballot.physical == true
-        end
+      def store_user_heading
+        ballot.user.update(balloted_heading_id: heading.id) unless ballot.physical == true
+      end
     end
   end
 end

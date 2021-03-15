@@ -83,6 +83,25 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.index ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
   end
 
+  add_index "ahoy_events", ["name", "time"], name: "index_ahoy_events_on_name_and_time", using: :btree
+  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
+  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
+  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
+
+  create_table "ballot_lines", force: :cascade do |t|
+    t.integer  "ballot_id"
+    t.integer  "spending_proposal_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "ballots", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "ballot_lines_count", default: 0
+  end
+
   create_table "banner_sections", force: :cascade do |t|
     t.integer  "banner_id"
     t.integer  "web_section_id"
@@ -135,6 +154,7 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.datetime "updated_at",                     null: false
     t.boolean  "physical",       default: false
     t.integer  "poll_ballot_id"
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_content_blocks", force: :cascade do |t|
@@ -254,6 +274,7 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.integer  "community_id"
     t.boolean  "visible_to_valuators",                                                 default: false
     t.integer  "valuator_group_assignments_count",                                     default: 0
+    t.integer  "original_spending_proposal_id"
     t.datetime "confirmed_hide_at"
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                                          default: 0
@@ -1334,9 +1355,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.tsvector "tsv"
     t.string   "responsible_name",            limit: 60
     t.integer  "physical_votes",                         default: 0
-    t.index ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
-    t.index ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
-    t.index ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
+    t.integer  "comments_count"
+    t.datetime "hidden_at"
   end
 
   create_table "taggings", force: :cascade do |t|

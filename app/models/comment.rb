@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   include Graphqlable
   include Notifiable
 
-  COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll Topic Legislation::Question
+  COMMENTABLE_TYPES = %w(Debate Proposal SpendingProposal Budget::Investment Poll Topic Legislation::Question
                         Legislation::Annotation Legislation::Proposal).freeze
 
   acts_as_paranoid column: :hidden_at
@@ -19,7 +19,7 @@ class Comment < ApplicationRecord
 
   validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
 
-  validate :validate_body_length
+  validate :validate_body_length, unless: -> { valuation }
   validate :comment_valuation, if: -> { valuation }
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
