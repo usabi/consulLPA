@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock "~> 3.10.1"
+lock "~> 3.11.2"
 
 def deploysecret(key)
   @deploy_secrets_yml ||= YAML.load_file("config/deploy-secrets.yml")[fetch(:stage).to_s]
@@ -71,10 +71,9 @@ namespace :deploy do
 
   # after "deploy:migrate", "add_new_settings"
 
-  after  :publishing, "setup_puma"
-
+  # after  :publishing, "setup_puma"
   after :published, "deploy:restart"
-  before "deploy:restart", "puma:restart"
+  # before "deploy:restart", "puma:smart_restart"
   before "deploy:restart", "delayed_job:restart"
   before "deploy:restart", "puma:start"
 
