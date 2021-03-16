@@ -22,7 +22,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/environments/production.rb lib/custom/census_api.rb}
+set :linked_files, %w{config/database.yml config/secrets.yml lib/custom/census_api.rb}
 set :linked_dirs, %w{log tmp public/system public/assets public/ckeditor_assets}
 
 set :keep_releases, 5
@@ -75,7 +75,7 @@ namespace :deploy do
   after :published, "deploy:restart"
   # before "deploy:restart", "puma:smart_restart"
   before "deploy:restart", "delayed_job:restart"
-  before "deploy:restart", "puma:start"
+  # before "deploy:restart", "puma:start"
 
   after :finished, "refresh_sitemap"
 
