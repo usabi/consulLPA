@@ -10,6 +10,16 @@
       <li class="orbit-slide" aria-live="polite">
         <div class="row register">
           <div class="small-4 medium-3 large-2 small-centered">
+            <%= link_to 'Participa', '/budgets/5', class: "button expanded large", target: "_blank"  %>
+          </div>
+        </div>
+        <figure class="orbit-figure">
+          <%= image_tag('Banner-Presupuestos-2021.jpg', class: 'orbit-image', alt: 'Presupuestos Participativos 2021') %>
+        </figure>
+      </li>
+      <li class="orbit-slide" aria-live="polite">
+        <div class="row register">
+          <div class="small-4 medium-3 large-2 small-centered">
             <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
           </div>
         </div>
@@ -30,16 +40,6 @@
             <%= image_tag('foto10.jpg', class: 'orbit-image', alt: 'Resultados!') %>
           </figure>
         </a>
-      </li>
-      <li class="orbit-slide" aria-live="polite">
-        <div class="row register">
-          <div class="small-4 medium-3 large-2 small-centered">
-            <%= link_to 'Consultar aquí', '/legislation/processes/3/allegations', class: "button expanded large", target: "_blank"  %>
-          </div>
-        </div>
-        <figure class="orbit-figure">
-          <%= image_tag('consulta_publica.jpg', class: 'orbit-image', alt: 'CONSULTA PÚBLICA REGLAMENTO CENTROS CíVICOS Y LOCALES SOCIALES') %>
-        </figure>
       </li>
       <li class="orbit-slide" aria-live="polite">
         <div class="row register">
@@ -68,55 +68,6 @@
           <%= image_tag('foto7.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
         </figure>
       </li>
-
-      <li class="orbit-slide" aria-live="polite">
-        <div class="row banner">
-          <div class="small-12 medium-12 small-centered column text-center">
-            <h1><%= t("layouts.header.open_city_title_html") %></h1>
-          </div>
-        </div>
-        <div class="row register">
-          <div class="small-4 medium-3 large-2 small-centered">
-            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
-          </div>
-        </div>
-
-        <figure class="orbit-figure">
-          <%= image_tag('foto8.jpg', class: 'orbit-image', alt: 'Foto participación ciudadana') %>
-        </figure>
-      </li>
-
-      <li class="orbit-slide" aria-live="polite">
-        <div class="row banner">
-          <div class="small-12 medium-12 small-centered column text-center">
-            <h1><%= t("layouts.header.open_city_title_html") %></h1>
-          </div>
-        </div>
-        <div class="row register">
-          <div class="small-4 medium-3 large-2 small-centered">
-            <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %>
-          </div>
-        </div>
-        <figure class="orbit-figure">
-          <%= image_tag('foto3.jpg', class: 'orbit-image', alt: 'Actividades participación ciudadana') %>
-        </figure>
-      </li>
-      <!-- <li class="orbit&#45;slide"> -->
-      <!--   <div class="row banner"> -->
-      <!--     <div class="small&#45;12 medium&#45;12 small&#45;centered column text&#45;center"> -->
-      <!--       <h1><%= t("layouts.header.open_city_title_html") %></h1> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!--   <div class="row register"> -->
-      <!--     <div class="small&#45;4 medium&#45;3 large&#45;2 small&#45;centered"> -->
-      <!--       <%= link_to t("layouts.header.register"), new_user_registration_path, class: "button expanded large" %> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!--   <figure class="orbit&#45;figure"> -->
-      <!--     <%= image_tag('foto4.jpg', class: 'orbit&#45;image', alt: 'Actividades participación ciudadana') %> -->
-      <!--   </figure> -->
-      <!-- </li> -->
-
     </ul>
   </div>
   <nav class="orbit-bullets">
