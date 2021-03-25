@@ -33,17 +33,9 @@
 
           <% if current_budget.accepting? %>
             <% if current_user %>
-              <% if current_user.level_two_or_three_verified? %>
-                <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_path(current_budget),
-                            class: "button margin-top expanded" %>
-              <% else %>
-                <div class="callout warning margin-top">
-                  <%= t("budgets.investments.index.sidebar.verified_only",
-                      verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                                      verification_path)).html_safe %>
-                </div>
-              <% end %>
+              <%= link_to t("budgets.investments.index.sidebar.create"),
+                          new_budget_investment_path(current_budget),
+                          class: "button margin-top expanded" %>
             <% else %>
               <div class="callout primary margin-top">
                 <%= t("budgets.investments.index.sidebar.not_logged_in",
