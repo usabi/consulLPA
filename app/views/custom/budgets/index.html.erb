@@ -160,14 +160,7 @@
       <p class="lead">
         <strong><%= t("budgets.index.section_footer.title") %></strong>
       </p>
-      <p><%= t("budgets.index.section_footer.description") %></p>
-      <p><%= t("pages.help.budgets.description_2") %></p>
-      <ul class="features">
-        <li><%= t("pages.help.budgets.phase_1_html") %></li>
-        <li><%= t("pages.help.budgets.phase_2_html") %></li>
-        <li><%= t("pages.help.budgets.phase_3_html") %></li>
-        <li><%= t("pages.help.budgets.phase_4_html") %></li>
-      </ul>
+      <%= raw SiteCustomization::Page.find_by(slug: 'help-budgets')&.content %>
     </div>
   </div>
 </div>

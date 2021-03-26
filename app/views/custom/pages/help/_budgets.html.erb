@@ -1,16 +1,11 @@
+<% page = SiteCustomization::Page.find_by(slug: 'help-budgets') %>
 <div class="row section-content">
-  <div class="small-12 column">
-    <h3 id="budgets" data-magellan-target="budgets">
-      <%= t("pages.help.budgets.title") %>
-    </h3>
-    <p><%= t("pages.help.budgets.description") %></p>
-    <p><%= t("pages.help.budgets.description_2") %></p>
-    <ul class="features">
-      <li><%= t("pages.help.budgets.phase_1_html") %></li>
-      <li><%= t("pages.help.budgets.phase_2_html") %></li>
-      <li><%= t("pages.help.budgets.phase_3_html") %></li>
-      <li><%= t("pages.help.budgets.phase_4_html") %></li>
-      <li><%= t("pages.help.budgets.phase_5_html") %></li>
-    </ul>
-  </div>
+  <% if page %>
+    <div class="small-12 column">
+      <h3 id="budgets" data-magellan-target="budgets">
+        <%= page.title %>
+      </h3>
+      <%= raw page.content %>
+    </div>
+  <% end %>
 </div>
