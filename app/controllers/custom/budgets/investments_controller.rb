@@ -6,27 +6,16 @@ class Budgets::InvestmentsController
 
   has_filters valid_filters, only: [:index, :show, :suggest]
 
-  def edit
-  end
-
-  def update
-    if @investment.update(investment_params)
-      redirect_to budget_investment_path(@budget, @investment),
-                  notice: t('flash.actions.update.budget_investment')
-    else
-      render :edit
-    end
-  end
-
   private
 
     def investment_params
-      params.require(:budget_investment)
-        .permit(:title, :description, :heading_id, :tag_list, :author_phone,
-                :organization_name, :location, :terms_of_service, :skip_map,
-                image_attributes: image_attributes,
-                documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                map_location_attributes: [:latitude, :longitude, :zoom])
+      attributes = [:heading_id, :tag_list,
+                    :organization_name, :location, :terms_of_service, :skip_map,
+                    :author_phone,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
+      params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 end
 
