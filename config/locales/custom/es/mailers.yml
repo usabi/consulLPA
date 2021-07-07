@@ -74,18 +74,28 @@ es:
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado/a usuario/a"
-      new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nuevo proyecto de gasto"
+      explanation: "Su propuesta ha sido marcada como no viable:"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
     budget_investment_not_selected:
       hi: "Estimado/a usuario/a"
-      new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
-      new_href: "nuevo proyecto de gasto"
+      explanation: "Su propuesta ha sido marcada como no seleccionada:"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
+    budget_investment_takecharge:
+      hi: "Estimado/a usuario/a"
+      explanation: 'Su proyecto no pasa a la siguiente fase de apoyos porque ha sido asumido por el Ayuntamiento.'
+      sincerely: "Atentamente"
+      sorry: "Gracias por tu inestimable participación."
+      subject: "Tu proyecto de gasto '%{code}' ha sido asumido por el ayuntamiento"
+    budget_investment_next_year_budget:
+      hi: "Estimado/a usuario/a"
+      explanation: 'Su proyecto no pasa a la siguiente fase de apoyos porque está prevista su inclusión en los presupuestos del próximo año.'
+      sincerely: "Atentamente"
+      sorry: "Gracias por tu inestimable participación."
+      subject: "Tu proyecto de gasto '%{code}' está previsto para inclusión el próximo año"
     budget_investment_selected:
       subject: "Tu proyecto de gasto '%{code}' ha sido seleccionado"
       hi: "Estimado/a usuario/a"

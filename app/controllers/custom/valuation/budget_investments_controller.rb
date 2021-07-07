@@ -12,6 +12,14 @@ class Valuation::BudgetInvestmentsController
         @investment.send_not_selected_email
       end
 
+      if @investment.takecharge_email_pending?
+        @investment.send_takecharge_email
+      end
+
+      if @investment.next_year_budget_email_pending?
+        @investment.send_next_year_budget_email
+      end
+
       Activity.log(current_user, :valuate, @investment)
       notice = t('valuation.budget_investments.notice.valuate')
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice

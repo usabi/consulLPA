@@ -44,4 +44,30 @@ class Budget::Investment
       Mailer.budget_investment_not_selected(self).deliver_later
       update(not_selected_email_sent_at: Time.current)
     end
+
+    def takecharge_email_pending?
+      takecharge_email_sent_at.blank? && takecharge? && valuation_finished?
+    end
+
+    def takecharge?
+      feasibility == "takecharge"
+    end
+
+    def send_takecharge_email
+      Mailer.budget_investment_takecharge(self).deliver_later
+      update(takecharge_email_sent_at: Time.current)
+    end
+
+    def next_year_budget_email_pending?
+      next_year_budget_email_sent_at.blank? && next_year_budget? && valuation_finished?
+    end
+
+    def next_year_budget?
+      feasibility == "nextyearbudget"
+    end
+
+    def send_next_year_budget_email
+      Mailer.budget_investment_next_year_budget(self).deliver_later
+      update(next_year_budget_email_sent_at: Time.current)
+    end
 end

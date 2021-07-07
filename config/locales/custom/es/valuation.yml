@@ -54,7 +54,7 @@ es:
         undefined: Sin definir
         takecharge: "Asumida"
         nextyearbudget: "Prevista inclusión en presupuestos del próximo año"
-        not_selected: "No seleccionada"
+        notselected: "No seleccionada"
         valuation_finished: Informe finalizado
         duration: Plazo de ejecución
         responsibles: Responsables

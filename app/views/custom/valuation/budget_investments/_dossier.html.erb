@@ -39,8 +39,8 @@
   <%= t("valuation.budget_investments.show.#{@investment.feasibility}") %>
 </p>
 
-<%= explanation_field @investment.unfeasibility_explanation %>
-<%= explanation_field @investment.not_selected_explanation %>
+<%= explanation_field @investment.unfeasibility_explanation if @investment.feasibility == 'unfeasible' %>
+<%= explanation_field @investment.not_selected_explanation if @investment.feasibility == 'notselected' %>
 
 <% if @investment.valuation_finished %>
   <p id="valuation">

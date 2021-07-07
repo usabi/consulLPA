@@ -1,22 +1,22 @@
 <td style="padding-bottom: 20px; padding-left: 10px;">
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_not_selected.hi") %>
+    <%= t("mailers.budget_investment_unfeasible.hi") %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_not_selected.explanation") %>
+    <%= t("mailers.budget_investment_unfeasible.explanation") %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; padding-left: 12px; border-left: 2px solid #ccc;">
-    <%= @investment.not_selected_explanation.presence || '-' %>
+    <%= @investment.unfeasibility_explanation.presence || '-' %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_not_selected.sorry") %>
+    <%= t("mailers.budget_investment_unfeasible.sorry") %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_not_selected.sincerely") %>
+    <%= t("mailers.budget_investment_unfeasible.sincerely") %>
   </p>
 </td>

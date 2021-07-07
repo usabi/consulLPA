@@ -620,6 +620,68 @@ es:
         body: Contenido del email
         body_help_text: Así es como verán el email los usuarios
         send_alert: ¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?
+    system_emails:
+      preview_pending:
+        action: Previsualizar pendientes
+        preview_of: Vista previa de %{name}
+        pending_to_be_sent: Este es todo el contenido pendiente de enviar
+        moderate_pending: Moderar envío de notificación
+        send_pending: Enviar pendientes
+        send_pending_notification: Notificaciones pendientes enviadas correctamente
+      proposal_notification_digest:
+        title: "Resumen de notificationes de propuestas"
+        description: "Reune todas las notificaciones de propuestas en un único mensaje, para evitar demasiados emails."
+        preview_detail: "Los usuarios sólo recibirán las notificaciones de aquellas propuestas que siguen."
+      budget_investment_created:
+        title: "Proyecto de gasto creado"
+        description: "Enviado cuando un usuario crea un proyecto de presupuestos participativos."
+      budget_investment_selected:
+        title: "Proyecto de gasto seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido seleccionado."
+      budget_investment_unfeasible:
+        title: "Proyecto de gasto inviable"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como inviable."
+      budget_investment_not_selected:
+        title: "Proyecto de gasto no seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como no seleccionado."
+      budget_investment_takecharge:
+        title: "Proyecto de gasto asumido"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como asumido."
+      budget_investment_next_year_budget:
+        title: "Proyecto de gasto previsto para inclusión en presupuesto del próximo año"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que ha sido marcado como previsto para inclusión en presupuesto del próximo año."
+      budget_investment_unselected:
+        title: "Proyecto de gasto no seleccionado"
+        description: "Enviado al autor de un proyecto de presupuestos participativos que no ha sido seleccionado para la fase de votación."
+      comment:
+        title: "Comentario"
+        description: "Enviado al autor cuando recibe un comentario."
+      reply:
+        title: "Respuesta"
+        description: "Enviado al autor del comentario cuando recibe una respuesta."
+      direct_message_for_receiver:
+        title: "Mensaje privado recibido"
+        description: "Enviado al receptor de un mensaje privado."
+      direct_message_for_sender:
+        title: "Mensaje privado enviado"
+        description: "Enviado al remitente de un mensaje privado."
+      email_verification:
+        title: "Verificación por email"
+        description: "Enviado al nuevo usuario registrado para verificar su cuenta."
+      user_invite:
+        title: "Invitación de usuarios"
+        description: "Enviado a la persona que ha sido invitada a registrar una cuenta."
+      evaluation_comment:
+        title: "Nuevo comentario de evaluación"
+        description: "Enviado a administradores y evaluadores del presupuesto."
+      edit_info: "Puedes editar este email en"
+      message_title: "Título del mensaje"
+      message_body: "Este es un ejemplo de contenido de un mensaje."
+      alert:
+        no_investments: "No se ha creado ningún proyecto de gasto. Se necesita algún ejemplo para poder previsualizar el email."
+        no_comments: "No se ha creado ningún comentario. Se necesita algún ejemplo para poder previsualizar el email."
+        no_replies: "No se ha creado ninguna respuesta. Se necesita algún ejemplo para poder previsualizar el email."
+        no_evaluation_comments: "No se ha creado ningún comentario de evaluación. Se necesita algún ejemplo para poder previsualizar el email."
     emails_download:
       index:
         title: Descarga de emails

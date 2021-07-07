@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200709124137) do
+ActiveRecord::Schema.define(version: 20210707122120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -276,6 +276,8 @@ ActiveRecord::Schema.define(version: 20200709124137) do
     t.text "not_selected_explanation"
     t.datetime "not_selected_email_sent_at"
     t.integer "original_heading_id"
+    t.datetime "takecharge_email_sent_at"
+    t.datetime "next_year_budget_email_sent_at"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id"
     t.index ["author_id"], name: "index_budget_investments_on_author_id"
     t.index ["community_id"], name: "index_budget_investments_on_community_id"
