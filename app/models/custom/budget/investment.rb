@@ -5,6 +5,8 @@ class Budget::Investment
   scope :takecharged, -> { where(feasibility: "takecharge") }
   scope :included_next_year_budget, -> { where(feasibility: "nextyearbudget") }
   scope :not_selected, -> { where(feasibility: "notselected") }
+  # NOTE: This scope includes other feasibilities because is a filter used by default
+  scope :not_unfeasible, -> { where.not(feasibility: ["unfeasible", "not_selected", "takecharge", "next_year_budget"]) }
 
   def enough_money?(ballot)
     available_money = ballot.amount_available(heading)
