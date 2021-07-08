@@ -23,6 +23,12 @@ class Budget::Investment
   end
 
     def self.advanced_filters(params, results)
+      results = results.without_admin      if params[:advanced_filters].include?("without_admin")
+      results = results.without_valuator   if params[:advanced_filters].include?("without_valuator")
+      results = results.under_valuation    if params[:advanced_filters].include?("under_valuation")
+      results = results.valuation_finished if params[:advanced_filters].include?("valuation_finished")
+      results = results.winners            if params[:advanced_filters].include?("winners")
+
       ids = []
       ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
       ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
@@ -30,8 +36,10 @@ class Budget::Investment
       ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
       ids += results.takecharged.pluck(:id)                 if params[:advanced_filters].include?('takecharged')
       ids += results.included_next_year_budget.pluck(:id)   if params[:advanced_filters].include?('included_next_year_budget')
-      ids += results.not_selected.pluck(:id)   if params[:advanced_filters].include?('not_selected')
-      results.where("budget_investments.id IN (?)", ids)
+      ids += results.not_selected.pluck(:id)   		    if params[:advanced_filters].include?('not_selected')
+
+      results = results.where(id: ids) if ids.any?
+      results
     end
 
     def not_selected_email_pending?
