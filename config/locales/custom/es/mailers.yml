@@ -74,13 +74,13 @@ es:
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Estimado/a usuario/a"
-      explanation: "Su propuesta ha sido marcada como no viable:"
+      explanation: "Su proyecto ha sido marcado como no viable:"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
-      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como inviable"
+      subject: "Tu proyecto de gasto '%{code}' ha sido marcado como no viable"
     budget_investment_not_selected:
       hi: "Estimado/a usuario/a"
-      explanation: "Su propuesta ha sido marcada como no seleccionada:"
+      explanation: "Su proyecto ha sido marcado como no seleccionado:"
       sincerely: "Atentamente"
       sorry: "Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación."
       subject: "Tu proyecto de gasto '%{code}' no ha sido seleccionado"
